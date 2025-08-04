@@ -68,8 +68,8 @@ contract SHAMBALUVCrossChainBridge is Ownable, ReentrancyGuard {
     using Address for address payable;
     
     // ============ CONSTANTS ============
-    uint256 public constant MINIMUM_TRANSFER = 1_000_000 * 1e18; // 1 million LUV minimum
-    uint256 public constant MAXIMUM_TRANSFER = 1_000_000_000_000 * 1e18; // 1 trillion LUV maximum
+    uint256 public constant MINIMUM_TRANSFER = 1 * 1e18; // 1 LUV minimum
+    uint256 public constant MAXIMUM_TRANSFER = 1_000_000_000_000_000 * 1e18; // 1 quadrillion LUV maximum
     uint256 public constant BRIDGE_FEE = 100; // 1% bridge fee (100 basis points)
     uint256 public constant FEE_DENOMINATOR = 10000;
     
