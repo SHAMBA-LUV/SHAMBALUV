@@ -2,7 +2,7 @@
 
 ## 📋 Overview
 
-**SHAMBA LUV** is a revolutionary multi-chain reflection token built on the Ethereum Virtual Machine (EVM) with advanced security features, MEV protection, and comprehensive governance mechanisms. The token implements a sophisticated fee structure that rewards holders while supporting project development and liquidity growth.
+**SHAMBA LUV** is a multi-chain reflection token built for Ethereum Virtual Machine (EVM) with advanced security features, MEV protection, and comprehensive governance mechanisms. The token implements a reflections based fee structure rewarding holders while supporting project development and liquidity growth. SHAMBA LUV grows when you hold LUV. Hold LUV to earn LUV. fee free sharing of LUV. 5% fee on buy and sell. v2 default for trading with v3 upgrade. Designed for Agglayer compatiabilty for cross-chain tokenomics.
 
 ## 🏗️ Contract Architecture
 
