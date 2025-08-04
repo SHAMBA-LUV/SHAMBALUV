@@ -1,4 +1,4 @@
-10 trillion LUV == 1×10¹³ LUV
+10 trillion LUV == 1×10¹³ LUV == 10 000 000 000 000 SHAMBA LUV
 
 # LUV ETH Team Fee Tracking Demo
 
