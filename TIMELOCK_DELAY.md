@@ -9,7 +9,7 @@ The LUV contract now features a **variable timelock system** that allows the own
 ### **Constants (Fixed)**
 ```solidity
 uint256 public constant MIN_TIMELOCK_DELAY = 1 hours;     // Minimum 1 hour
-uint256 public constant MAX_TIMELOCK_DELAY = 30 days;     // Maximum 30 days  
+uint256 public constant MAX_TIMELOCK_DELAY = 1000 * 365 days; // Maximum 1000 years  
 uint256 public constant DEFAULT_TIMELOCK_DELAY = 24 hours; // Default 24 hours
 ```
 
@@ -30,7 +30,7 @@ function setTimelockDelay(uint256 _newDelay) external onlyOwner
 
 **Constraints:**
 - Minimum: 1 hour (3,600 seconds)
-- Maximum: 30 days (2,592,000 seconds)
+- Maximum: 1000 years (31,536,000,000 seconds)
 
 **Security Features:**
 - ✅ **NOT timelocked** - Allows emergency adjustments
@@ -63,7 +63,7 @@ function getTimelockDelayInfo() external view returns (
 **Returns:**
 - `currentDelay`: Current timelock delay in seconds
 - `minDelay`: Minimum allowed delay (1 hour)
-- `maxDelay`: Maximum allowed delay (30 days)
+- `maxDelay`: Maximum allowed delay (1000 years)
 - `defaultDelay`: Default delay value (24 hours)
 
 **Example Usage:**
@@ -98,7 +98,11 @@ All critical functions now use the variable `timelockDelay` instead of the fixed
 | 48 hours | 172,800 | Weekend coverage |
 | 7 days | 604,800 | Extended review period |
 | 14 days | 1,209,600 | Major changes |
-| 30 days | 2,592,000 | Maximum security |
+| 30 days | 2,592,000 | Extended review |
+| 1 year | 31,536,000 | Annual governance |
+| 10 years | 315,360,000 | Long-term protocol |
+| 100 years | 3,153,600,000 | Multi-generational |
+| 1000 years | 31,536,000,000 | Maximum security |
 
 ### **JavaScript Helper Functions**
 ```javascript
@@ -123,6 +127,12 @@ async function setTimelockDays(days) {
     const seconds = daysToSeconds(days);
     await contract.setTimelockDelay(seconds);
 }
+
+// Set timelock to specific years
+async function setTimelockYears(years) {
+    const seconds = years * 365 * 24 * 60 * 60;
+    await contract.setTimelockDelay(seconds);
+}
 ```
 
 ## 🚨 **Security Considerations**
@@ -144,6 +154,8 @@ async function setTimelockDays(days) {
 2. **Gradual Changes** - Don't make extreme adjustments
 3. **Community Communication** - Announce delay changes
 4. **Documentation** - Keep records of changes
+5. **Long-term Planning** - Consider multi-generational governance
+6. **Permanent Decisions** - Use 100+ year delays for irreversible changes
 
 ## 📈 **Monitoring and Events**
 
@@ -189,6 +201,24 @@ await contract.setMaxTransferPercent(200); // 2% max transfer
 // Community has 7 days to review
 ```
 
+### **Scenario 4: Long-term Governance**
+```javascript
+// Set very long delay for permanent changes
+await contract.setTimelockDelay(setTimelockYears(100)); // 100 years
+// Propose permanent change
+await contract.setTeamWallet(permanentWallet);
+// Effectively permanent - 100 year delay
+```
+
+### **Scenario 5: Permanent Lock**
+```javascript
+// Set maximum delay (1000 years) for permanent lock
+await contract.setTimelockDelay(setTimelockYears(1000)); // 1000 years
+// Propose change
+await contract.setTeamWallet(permanentWallet);
+// Effectively permanent - beyond human lifetime
+```
+
 ### **Scenario 3: Normal Operations**
 ```javascript
 // Standard 24-hour delay
@@ -201,7 +231,7 @@ await contract.setLiquidityWallet(newLiquidityWallet);
 
 The variable timelock system provides:
 
-- ✅ **Flexible delays** from 1 hour to 30 days
+- ✅ **Flexible delays** from 1 hour to 1000 years
 - ✅ **Security bounds** prevent extreme values
 - ✅ **Emergency capability** for urgent changes
 - ✅ **Transparency** through events and monitoring
