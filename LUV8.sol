@@ -1,4 +1,3 @@
-
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity >=0.5.0 ^0.8.0 ^0.8.1 ^0.8.23 ^0.8.24;
 
@@ -230,8 +229,9 @@ contract ShambaLuv is ERC20, Ownable, ReentrancyGuard {
     uint256 public timelockDelay = DEFAULT_TIMELOCK_DELAY; // Current timelock delay (variable)
     uint256 public routerTimelockDelay = DEFAULT_TIMELOCK_DELAY; // Router-specific timelock delay (variable)
     uint256 public lastCriticalUpdate; // Timestamp of last critical function call
+    bool public timelockEnabled = false; // Toggle for timelock protection (disabled by default)
     
-    // ============ PROPER TIMELOCK IMPLEMENTATION ============
+    // ============ TIMELOCK ============
     enum OperationState {
         Unset,
         Waiting,
@@ -276,10 +276,11 @@ contract ShambaLuv is ERC20, Ownable, ReentrancyGuard {
     event TimelockDelayUpdated(uint256 oldDelay, uint256 newDelay, address indexed by);
     event RouterTimelockDelayUpdated(uint256 oldDelay, uint256 newDelay, address indexed by);
     
-    // Proper timelock events
+    // Timelock events
     event TimelockProposed(bytes32 indexed operationId, uint256 executionTime, address indexed proposer);
     event TimelockExecuted(bytes32 indexed operationId, address indexed executor);
     event TimelockCancelled(bytes32 indexed operationId, address indexed canceller);
+    event TimelockToggled(bool enabled, address indexed by);
     
     // Emergency events
     event StuckBalanceCleared(address indexed token, address indexed recipient, uint256 amount, string tokenType);
@@ -295,6 +296,26 @@ contract ShambaLuv is ERC20, Ownable, ReentrancyGuard {
     modifier onlyAdmin() {
         require(msg.sender == adminWallet, "Not admin");
         _;
+    }
+
+    /**
+     * @dev Timelock modifier for critical functions
+     * @dev Uses block.timestamp for time comparison (safe for timelock delays)
+     */
+    modifier timelockProtected(bytes32 operationId) {
+        if (timelockEnabled) {
+            require(timelockProposals[operationId] != 0, "Operation not proposed");
+            require(block.timestamp >= timelockProposals[operationId], "Timelock not expired");
+            require(operationStates[operationId] == OperationState.Waiting, "Operation not in waiting state");
+            
+            // Mark operation as ready for execution
+            operationStates[operationId] = OperationState.Ready;
+        }
+        _;
+        if (timelockEnabled) {
+            // Mark operation as done after execution
+            operationStates[operationId] = OperationState.Done;
+        }
     } 
 
     // ============ CONSTRUCTOR ============
@@ -311,7 +332,7 @@ contract ShambaLuv is ERC20, Ownable, ReentrancyGuard {
         address _teamWallet,
         address _liquidityWallet,
         address _router
-    ) ERC20("SHAMBA LUV", "LUV") Ownable(msg.sender) payable {
+    ) ERC20("SHAMBA", "LUV") Ownable(msg.sender) payable {
         require(_teamWallet != address(0), "Invalid team wallet");
         require(_liquidityWallet != address(0), "Invalid liquidity wallet");
         require(_router != address(0), "Invalid router");
@@ -698,13 +719,80 @@ contract ShambaLuv is ERC20, Ownable, ReentrancyGuard {
         adminWallet = newAdmin;
     }
     
+    // ============ TIMELOCK MANAGEMENT ============
+    
+    /**
+     * @dev Toggle timelock protection on/off
+     * @param _enabled Whether to enable timelock protection
+     * @notice Only owner can toggle timelock protection
+     */
+    function setTimelockEnabled(bool _enabled) external onlyOwner {
+        timelockEnabled = _enabled;
+        emit TimelockToggled(_enabled, msg.sender);
+    }
+
+    /**
+     * @dev Propose a timelock operation
+     * @param operationId Unique identifier for the operation
+     * @param delay Delay in seconds before operation can be executed
+     * @notice Only admin can propose timelock operations
+     */
+    function proposeTimelock(bytes32 operationId, uint256 delay) external onlyAdmin {
+        require(timelockEnabled, "Timelock is disabled");
+        require(operationId != bytes32(0), "Invalid operation ID");
+        require(delay <= MAX_TIMELOCK_DELAY, "Delay too long");
+        require(timelockProposals[operationId] == 0, "Operation already proposed");
+        
+        // Use block.timestamp + delay for execution time
+        uint256 executionTime = block.timestamp + delay;
+        timelockProposals[operationId] = executionTime;
+        operationStates[operationId] = OperationState.Waiting;
+        
+        emit TimelockProposed(operationId, executionTime, msg.sender);
+    }
+
+    /**
+     * @dev Cancel a timelock operation
+     * @param operationId Unique identifier for the operation
+     * @notice Only admin can cancel timelock operations
+     */
+    function cancelTimelock(bytes32 operationId) external onlyAdmin {
+        require(timelockProposals[operationId] != 0, "Operation not found");
+        require(operationStates[operationId] == OperationState.Waiting, "Operation not in waiting state");
+        
+        delete timelockProposals[operationId];
+        operationStates[operationId] = OperationState.Unset;
+        
+        emit TimelockCancelled(operationId, msg.sender);
+    }
+
+    /**
+     * @dev Get timelock status for an operation
+     * @param operationId Unique identifier for the operation
+     * @return proposed Whether the operation is proposed
+     * @return executionTime When the operation can be executed
+     * @return canExecute Whether the operation can be executed now
+     * @return state Current state of the operation
+     */
+    function getTimelockStatus(bytes32 operationId) external view returns (
+        bool proposed,
+        uint256 executionTime,
+        bool canExecute,
+        OperationState state
+    ) {
+        proposed = timelockProposals[operationId] != 0;
+        executionTime = timelockProposals[operationId];
+        canExecute = proposed && block.timestamp >= executionTime && operationStates[operationId] == OperationState.Waiting;
+        state = operationStates[operationId];
+    }
+
     // ============ ROUTER MANAGEMENT ============
     
     /**
      * @dev Update V2 router for multi-chain deployment (e.g., AggLayer)
      * @dev Timelock protected for security - critical router changes require delay
      */
-    function updateRouter(address _newRouter) external onlyAdmin {
+    function updateRouter(address _newRouter) external onlyAdmin timelockProtected(keccak256(abi.encodePacked("updateRouter", _newRouter))) {
         require(_newRouter != address(0), "Zero address");
         require(_newRouter != address(router), "Already set");
         
@@ -725,7 +813,7 @@ contract ShambaLuv is ERC20, Ownable, ReentrancyGuard {
      * @dev Set V3 router for upgradeability
      * @dev Timelock protected for security - critical router changes require delay
      */
-    function setV3Router(address _v3Router) external onlyAdmin {
+    function setV3Router(address _v3Router) external onlyAdmin timelockProtected(keccak256(abi.encodePacked("setV3Router", _v3Router))) {
         address oldV3Router = address(v3Router);
         v3Router = IUniswapV3SwapRouter(_v3Router);
         
@@ -737,7 +825,7 @@ contract ShambaLuv is ERC20, Ownable, ReentrancyGuard {
      * @dev Use this after deployment to enable V3 functionality
      * @dev Timelock protected for security - critical router changes require delay
      */
-    function setupQuickSwapV3() external onlyAdmin {
+    function setupQuickSwapV3() external onlyAdmin timelockProtected(keccak256(abi.encodePacked("setupQuickSwapV3"))) {
         v3Router = IUniswapV3SwapRouter(QUICKSWAP_V3_ROUTER);
         emit V3RouterUpdated(address(0), QUICKSWAP_V3_ROUTER);
     }
@@ -746,7 +834,7 @@ contract ShambaLuv is ERC20, Ownable, ReentrancyGuard {
      * @dev Toggle between V2 and V3 router usage
      * @dev Timelock protected for security - critical router changes require delay
      */
-    function toggleRouterVersion() external onlyAdmin {
+    function toggleRouterVersion() external onlyAdmin timelockProtected(keccak256(abi.encodePacked("toggleRouterVersion"))) {
         require(address(v3Router) != address(0), "V3 router not set");
         useV3Router = !useV3Router;
         
@@ -910,16 +998,19 @@ contract ShambaLuv is ERC20, Ownable, ReentrancyGuard {
      * @return currentDelay Current timelock delay in seconds
      * @return maxDelay Maximum allowed delay
      * @return defaultDelay Default delay value
+     * @return enabled Whether timelock protection is enabled
      */
     function getTimelockDelayInfo() external view returns (
         uint256 currentDelay,
         uint256 maxDelay,
-        uint256 defaultDelay
+        uint256 defaultDelay,
+        bool enabled
     ) {
         return (
             timelockDelay,
             MAX_TIMELOCK_DELAY,
-            DEFAULT_TIMELOCK_DELAY
+            DEFAULT_TIMELOCK_DELAY,
+            timelockEnabled
         );
     }
 
@@ -1051,13 +1142,15 @@ contract ShambaLuv is ERC20, Ownable, ReentrancyGuard {
         uint256 currentSlippage,
         uint256 maxAllowedSlippage,
         uint256 currentTimelockDelay,
-        uint256 lastCriticalUpdateTime
+        uint256 lastCriticalUpdateTime,
+        bool timelockEnabledStatus
     ) {
         return (
             maxSlippage,
             MAX_SLIPPAGE,
             timelockDelay,
-            lastCriticalUpdate
+            lastCriticalUpdate,
+            timelockEnabled
         );
     }
 
@@ -1124,7 +1217,7 @@ contract ShambaLuv is ERC20, Ownable, ReentrancyGuard {
      * @dev Admin can renounce admin role
      * @dev Timelock protected for security - critical admin changes require delay
      */
-    function renounceAdminRole() external onlyAdmin {
+    function renounceAdminRole() external onlyAdmin timelockProtected(keccak256(abi.encodePacked("renounceAdminRole"))) {
         address oldAdmin = adminWallet;
         adminWallet = address(0);
         adminFinalized = true; // Prevent future admin changes
