@@ -10,11 +10,11 @@ deploy/
 ├── LUV8.sol                           # SHAMBA LUV token contract
 ├── LUV8_flattened.sol                 # SHAMBA LUV contract for verification
 ├── ShambaLuvAirdrop.sol               # Airdrop contract
-├── ShambaLuvAirdrop_VERIFICATION.sol  # Flattened airdrop contract for verification
+├── ShambaLuvAirdrop_VERIFICATION.sol  # Airdrop contract for verification
 ├── deploy-live.sh                     # LUV8 token deployment script
 ├── deploy-airdrop.sh                  # Airdrop contract deployment script
-├── verify_correct_version.sh          # SHAMBA LUV verification script (correct settings)
-├── TECHNICAL.md                       # Complete verification guide
+├── verify_correct_version.sh          # SHAMBA LUV verification script
+├── TECHNICAL.md SUMMARY.md            # Complete verification guide
 ├── AIRDROP_DEPLOYMENT_SUMMARY.md      # Complete airdrop deployment summary
 └── [Generated Files]                  # Created during deployment
     ├── DeploymentDetails.md           # SHAMBA LUV deployment details
