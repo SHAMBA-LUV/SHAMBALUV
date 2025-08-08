@@ -19,8 +19,8 @@ deploy/
 └── [Generated Files]                  # Created during deployment
     ├── deployment-info.txt            # LUV8 deployment details
     ├── airdrop-deployment-info.txt    # Airdrop deployment details
-    ├── deploy/verify-contract.sh             # LUV8 verification script
-    └── deploy/verify-airdrop.sh              # Airdrop verification script
+    ├── deploy/verify-contract.sh      # LUV8 verification script
+    └── deploy/verify-airdrop.sh       # Airdrop verification script
 ```
 
 ## 🔧 Prerequisites
