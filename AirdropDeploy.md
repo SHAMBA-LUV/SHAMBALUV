@@ -10,7 +10,7 @@
 ## 🔧 **Deployment Details**
 
 ### **Constructor Arguments**
-- **Default Token Address**: `0x1035760d0f60b35b63660ac0774ef363eaa5456e` (LUV8 Token)
+- **Default Token Address**: `0x1035760d0f60b35b63660ac0774ef363eaa5456e` (SHAMBA LUV Token)
 - **ABI-Encoded Constructor Args**: `0x0000000000000000000000001035760d0f60b35b63660ac0774ef363eaa5456e`
 
 ### **Verification Settings**
