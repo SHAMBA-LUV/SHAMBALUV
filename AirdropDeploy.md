@@ -28,8 +28,8 @@
 - **Contract Code**: https://polygonscan.com/address/0x583F6D336E777c461FbfbeE3349D7D2dA9dc5e51#code
 
 ### **Related Contracts**
-- **LUV8 Token**: https://polygonscan.com/address/0x1035760d0f60b35b63660ac0774ef363eaa5456e
-- **LUV8 Token Code**: https://polygonscan.com/address/0x1035760d0f60b35b63660ac0774ef363eaa5456e#code
+- **LUV Token**: https://polygonscan.com/address/0x1035760d0f60b35b63660ac0774ef363eaa5456e
+- **LUV Token Code**: https://polygonscan.com/address/0x1035760d0f60b35b63660ac0774ef363eaa5456e#code
 
 ## 📋 **Contract Features**
 
@@ -65,7 +65,7 @@
 ## 🎯 **Default Configuration**
 
 ### **Initial Settings**
-- **Default Token**: LUV8 (`0x1035760d0f60b35b63660ac0774ef363eaa5456e`)
+- **Default Token**: LUV (`0x1035760d0f60b35b63660ac0774ef363eaa5456e`)
 - **Default Airdrop Amount**: 1,000,000,000,000 tokens (1 trillion)
 - **Airdrop Status**: Active
 - **Owner**: Deployment wallet
@@ -75,10 +75,10 @@
 - **Total Recipients**: 0 (new deployment)
 - **Contract Balance**: 0 (needs token deposit)
 
-## 🔗 **Integration with LUV8 Ecosystem**
+## 🔗 **Integration with LUV Ecosystem**
 
 ### **Token Relationship**
-- **Primary Token**: LUV8 (`0x1035760d0f60b35b63660ac0774ef363eaa5456e`)
+- **Primary Token**: LUV (`0x1035760d0f60b35b63660ac0774ef363eaa5456e`)
 - **Token Name**: SHAMBA LUV
 - **Token Symbol**: LUV
 - **Decimals**: 18
