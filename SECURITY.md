@@ -616,7 +616,7 @@ The contract is **production-ready** with the recommended improvements. The secu
 
 For security-related inquiries or vulnerability reports:
 
-- **Security Email**: security@shambaluv.com
+- **Security Email**: luv@pythai.net
 - **Bug Bounty**: [Program details to be announced]
 - **Responsible Disclosure**: 30-day disclosure timeline
 - **Emergency Contact**: [Emergency procedures to be established]
