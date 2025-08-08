@@ -18,7 +18,7 @@ deploy/
 ├── AIRDROP_DEPLOYMENT_SUMMARY.md      # Complete airdrop deployment summary
 └── [Generated Files]                  # Created during deployment
     ├── deployment-info.txt            # LUV8 deployment details
-    ├── airdrop-deployment-info.txt    # Airdrop deployment details
+    ├── AirdropDeploy.md               # Airdrop deployment details
     ├── deploy/verify-contract.sh      # LUV8 verification script
     └── deploy/verify-airdrop.sh       # Airdrop verification script
 ```
