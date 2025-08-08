@@ -6,7 +6,7 @@ This folder contains a comprehensive deployment template for the LUV8 ecosystem,
 
 ```
 deploy/
-├── README.md                           # This documentation file
+├── README.md                          # This documentation file
 ├── LUV8.sol                           # Main LUV8 token contract
 ├── LUV8_flattened.sol                 # Flattened LUV8 contract for verification
 ├── ShambaLuvAirdrop.sol               # Airdrop contract
@@ -17,7 +17,7 @@ deploy/
 ├── VERIFICATION.md                    # Complete verification guide
 ├── AIRDROP_DEPLOYMENT_SUMMARY.md      # Complete airdrop deployment summary
 └── [Generated Files]                  # Created during deployment
-    ├── deployment-info.txt            # LUV8 deployment details
+    ├── DeploymentDetails.md           # LUV8 deployment details
     ├── AirdropDeploy.md               # Airdrop deployment details
     ├── deploy/verify-contract.sh      # LUV8 verification script
     └── deploy/verify-airdrop.sh       # Airdrop verification script
