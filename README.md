@@ -14,7 +14,7 @@ deploy/
 ├── deploy-live.sh                     # LUV8 token deployment script
 ├── deploy-airdrop.sh                  # Airdrop contract deployment script
 ├── verify_correct_version.sh          # LUV8 verification script (correct settings)
-├── VERIFICATION.md                    # Complete verification guide
+├── TECHNICAL.md                       # Complete verification guide
 ├── AIRDROP_DEPLOYMENT_SUMMARY.md      # Complete airdrop deployment summary
 └── [Generated Files]                  # Created during deployment
     ├── DeploymentDetails.md           # LUV8 deployment details
