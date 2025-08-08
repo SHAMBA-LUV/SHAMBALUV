@@ -288,4 +288,4 @@ This deployment template is provided as-is for educational and development purpo
 
 **Template Version**: 1.0  
 **Last Updated**: $(date)  
-**Verified Contracts**: ✅ LUV8 Token, ✅ ShambaLuvAirdrop 
+**Verified Contracts**: ✅ SHAMBA LUV Token, ✅ ShambaLuvAirdrop 
