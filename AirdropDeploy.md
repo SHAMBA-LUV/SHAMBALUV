@@ -148,12 +148,12 @@ via_ir = true
 
 ### **Immediate Actions**
 1. **Monitor Verification**: Check verification status on PolygonScan
-2. **Deposit Tokens**: Add LUV8 tokens to contract for airdrops
+2. **Deposit Tokens**: Add LUV tokens to contract for airdrops
 3. **Test Functions**: Verify all contract functions work correctly
 4. **Configure Settings**: Set up airdrop parameters as needed
 
 ### **Post-Deployment Tasks**
-1. **Add Liquidity**: Ensure LUV8 token has sufficient liquidity
+1. **Add Liquidity**: Ensure LUV token has sufficient liquidity presale or private founder funding or both
 2. **Marketing Setup**: Prepare airdrop announcement and distribution
 3. **Monitoring**: Set up monitoring for airdrop claims
 4. **Security Audit**: Consider additional security measures
