@@ -224,13 +224,6 @@ cp .env.example .env
 
 ## 📈 Post-Deployment Steps
 
-### For LUV8 Token:
-1. Add liquidity to QuickSwap
-2. Configure reflection settings
-3. Test token transfers
-4. Set up marketing wallet
-5. Configure additional parameters
-
 ### For Airdrop Contract:
 1. Deposit tokens to airdrop contract
 2. Configure airdrop amounts
