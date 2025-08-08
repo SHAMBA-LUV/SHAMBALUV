@@ -1,4 +1,4 @@
-# 🚀 LUV8 Deployment Template
+# 🚀 LUV Deployment Template
 
 This folder contains a comprehensive deployment template for the LUV8 ecosystem, including the main token contract and airdrop contract.
 
@@ -19,8 +19,8 @@ deploy/
 └── [Generated Files]                  # Created during deployment
     ├── deployment-info.txt            # LUV8 deployment details
     ├── airdrop-deployment-info.txt    # Airdrop deployment details
-    ├── verify-contract.sh             # LUV8 verification script
-    └── verify-airdrop.sh              # Airdrop verification script
+    ├── deploy/verify-contract.sh             # LUV8 verification script
+    └── deploy/verify-airdrop.sh              # Airdrop verification script
 ```
 
 ## 🔧 Prerequisites
