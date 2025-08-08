@@ -46,7 +46,7 @@ LUV8_CONTRACT_ADDRESS=0xYourLUV8ContractAddress
 
 ## 🎯 Deployment Scripts
 
-### 1. LUV8 Token Deployment (`deploy-live.sh`)
+### SHAMBA LUV Token Deployment (`deploy-live.sh`)
 
 Deploys the main LUV8 token contract with reflection mechanism and advanced features.
 
@@ -92,7 +92,7 @@ Deploys the ShambaLuvAirdrop contract for flexible token distribution.
 
 ## 🔍 Verification Scripts
 
-### 1. Correct Version Verification (`verify_correct_version.sh`)
+### Correct Version Verification (`verify_correct_version.sh`)
 
 Verifies contracts using the exact settings that work for LUV8.
 
@@ -111,7 +111,7 @@ Verifies contracts using the exact settings that work for LUV8.
 - Optimizer Runs: 200
 - Via IR: Enabled
 
-### 2. Generated Verification Scripts
+### Generated Verification Scripts
 
 During deployment, the following scripts are automatically generated:
 
@@ -120,7 +120,7 @@ During deployment, the following scripts are automatically generated:
 
 ## 📋 Contract Features
 
-### LUV8 Token (`LUV8.sol`)
+### LUV Token (`LUV8.sol`)
 - **Reflection Mechanism**: Automatic token distribution to holders
 - **Liquidity Management**: Automatic liquidity provision
 - **Security Features**: Timelock, slippage protection
