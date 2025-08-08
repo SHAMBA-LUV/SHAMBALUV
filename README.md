@@ -5,7 +5,7 @@ ShambaLuvAirdrop<br />
 https://polygonscan.com/address/0x583F6D336E777c461FbfbeE3349D7D2dA9dc5e51#code<br />
 
 ```txt
-SHAMBA LUV is a digital gesture designed to spread abundance, fun, and community vibes for social sharing to build an emotional economy where gestures are stored on-chain giving attention, gestures, and community impact true value
+SHAMBA LUV is a digital gesture designed to spread abundance, fun, and community vibes for social sharing building an emotional economy where gestures are stored on-chain giving attention, gestures, and community impact true value
 ```
 
 This folder contains a comprehensive deployment template for the gesture based SHAMBA LUV cryptosystem, including the main token contract and airdrop contract<br />
