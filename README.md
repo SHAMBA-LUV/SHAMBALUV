@@ -1,9 +1,291 @@
-# <a href="https://luv.pythai.net">SHAMBA LUV</a>
-SHAMBA LUV is priceless<br />
-https://polygonscan.com/address/0x1035760d0f60B35B63660ac0774ef363eAa5456e<br />
-LUVdrop<br />
-https://polygonscan.com/address/0x583F6D336E777c461FbfbeE3349D7D2dA9dc5e51#code<br />
-contract owner<br />
-https://polygonscan.com/address/0x16666644043aecb616a061f0af42745d0d7390c4<br />
-liquidity provider<br />
-https://polygonscan.com/address/0x9E5e48aaE6D86c049053eeeD0a125C0f3635693F
+# 🚀 LUV8 Deployment Template
+
+This folder contains a comprehensive deployment template for the LUV8 ecosystem, including the main token contract and airdrop contract.
+
+## 📁 File Structure
+
+```
+deploy/
+├── README.md                           # This documentation file
+├── LUV8.sol                           # Main LUV8 token contract
+├── LUV8_VERIFICATION.sol              # Flattened LUV8 contract for verification
+├── ShambaLuvAirdrop.sol               # Airdrop contract
+├── ShambaLuvAirdrop_VERIFICATION.sol  # Flattened airdrop contract for verification
+├── deploy-live.sh                     # LUV8 token deployment script
+├── deploy-airdrop.sh                  # Airdrop contract deployment script
+├── verify_correct_version.sh          # LUV8 verification script (correct settings)
+├── VERIFICATION.md                    # Complete verification guide
+├── AIRDROP_DEPLOYMENT_SUMMARY.md      # Complete airdrop deployment summary
+└── [Generated Files]                  # Created during deployment
+    ├── deployment-info.txt            # LUV8 deployment details
+    ├── airdrop-deployment-info.txt    # Airdrop deployment details
+    ├── verify-contract.sh             # LUV8 verification script
+    └── verify-airdrop.sh              # Airdrop verification script
+```
+
+## 🔧 Prerequisites
+
+### Environment Variables (.env file)
+```bash
+# Wallet Configuration
+TEAM_WALLET=0xYourTeamWalletAddress
+LIQUIDITY_WALLET=0xYourLiquidityWalletAddress
+PRIVATE_KEY=0xYourPrivateKey
+
+# API Keys
+ETHERSCAN_API_KEY=YourEtherscanApiKey
+
+# Optional: LUV8 Contract Address (for airdrop deployment)
+LUV8_CONTRACT_ADDRESS=0xYourLUV8ContractAddress
+```
+
+### Dependencies
+- Foundry (forge, cast)
+- OpenZeppelin Contracts (automatically installed)
+- jq (for JSON parsing)
+
+## 🎯 Deployment Scripts
+
+### 1. LUV8 Token Deployment (`deploy-live.sh`)
+
+Deploys the main LUV8 token contract with reflection mechanism and advanced features.
+
+**Usage:**
+```bash
+./deploy/deploy-live.sh
+```
+
+**Features:**
+- ✅ Comprehensive validation
+- ✅ Automatic constructor argument generation
+- ✅ Deployment information documentation
+- ✅ Verification script generation
+- ✅ Error handling and troubleshooting
+
+**Constructor Arguments:**
+- Team Wallet Address
+- Liquidity Wallet Address
+- QuickSwap V2 Router Address
+
+### 2. Airdrop Contract Deployment (`deploy-airdrop.sh`)
+
+Deploys the ShambaLuvAirdrop contract for flexible token distribution.
+
+**Usage:**
+```bash
+# Interactive mode (prompts for token address)
+./deploy/deploy-airdrop.sh
+
+# With specific token address
+./deploy/deploy-airdrop.sh 0xYourTokenAddress
+```
+
+**Features:**
+- ✅ Flexible airdrop for any ERC20 token
+- ✅ One-time claim per address per token
+- ✅ Emergency withdrawal functions
+- ✅ Token rescue capabilities
+- ✅ Comprehensive admin controls
+
+**Constructor Arguments:**
+- Default Token Address (for airdrops)
+
+## 🔍 Verification Scripts
+
+### 1. Correct Version Verification (`verify_correct_version.sh`)
+
+Verifies contracts using the exact settings that work for LUV8.
+
+**Usage:**
+```bash
+# Interactive mode
+./deploy/verify_correct_version.sh
+
+# With contract address
+./deploy/verify_correct_version.sh 0xYourContractAddress
+```
+
+**Confirmed Working Settings:**
+- Compiler Version: `v0.8.30`
+- Optimization: Enabled
+- Optimizer Runs: 200
+- Via IR: Enabled
+
+### 2. Generated Verification Scripts
+
+During deployment, the following scripts are automatically generated:
+
+- `verify-contract.sh` - For LUV8 token verification
+- `verify-airdrop.sh` - For airdrop contract verification
+
+## 📋 Contract Features
+
+### LUV8 Token (`LUV8.sol`)
+- **Reflection Mechanism**: Automatic token distribution to holders
+- **Liquidity Management**: Automatic liquidity provision
+- **Security Features**: Timelock, slippage protection
+- **Multi-Router Support**: V2 and V3 router compatibility
+- **Gas Optimization**: Batch processing and efficient operations
+- **Admin Controls**: Comprehensive admin functions
+- **Emergency Functions**: Stuck balance recovery
+
+### ShambaLuvAirdrop (`ShambaLuvAirdrop.sol`)
+- **Flexible Airdrops**: Support for any ERC20 token
+- **One-Time Claims**: Prevents double-claiming
+- **Emergency Controls**: Withdrawal and rescue functions
+- **Admin Management**: Configurable airdrop settings
+- **Reentrancy Protection**: Secure token transfers
+- **Multi-Token Support**: Multiple token configurations
+
+## 🚀 Quick Start Guide
+
+### Step 1: Prepare Environment
+```bash
+# Create .env file with required variables
+cp .env.example .env
+# Edit .env with your values
+```
+
+### Step 2: Deploy LUV8 Token
+```bash
+./deploy/deploy-live.sh
+```
+
+### Step 3: Deploy Airdrop Contract
+```bash
+# Use the LUV8 contract address from step 2
+./deploy/deploy-airdrop.sh 0xYourLUV8ContractAddress
+```
+
+### Step 4: Verify Contracts
+```bash
+# Verify LUV8 token
+./deploy/verify_correct_version.sh 0xYourLUV8ContractAddress
+
+# Verify airdrop contract
+./deploy/verify_correct_version.sh 0xYourAirdropContractAddress
+```
+
+## 🔧 Manual Verification
+
+### For PolygonScan Verification:
+
+1. **Go to Contract Page**: https://polygonscan.com/address/YOUR_CONTRACT_ADDRESS
+2. **Click "Contract" tab**
+3. **Click "Verify and Publish"**
+4. **Fill in the verification form**:
+   - **Compiler Type**: Solidity (Single file)
+   - **Compiler Version**: `v0.8.30`
+   - **Open Source License Type**: MIT License
+   - **Optimization**: **Enabled**
+   - **Runs**: `200`
+   - **Via IR**: **Enabled**
+5. **Copy the entire content** of the appropriate `*_VERIFICATION.sol` file
+6. **Constructor Arguments**: Use the ABI-encoded string from deployment
+7. **Click "Verify and Publish"**
+
+## 📊 Network Information
+
+### Polygon Mainnet
+- **Chain ID**: 137
+- **RPC URL**: https://polygon-rpc.com
+- **Block Explorer**: https://polygonscan.com
+- **QuickSwap V2 Router**: `0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff`
+- **QuickSwap V3 Router**: `0xf5b509bB0909a69B1C207E495f687a6C0Ee0989e`
+
+## 🔍 Troubleshooting
+
+### Common Issues:
+
+1. **"Unable to find matching Contract Bytecode and ABI"**
+   - Use compiler version `v0.8.30` (not v0.8.23)
+   - Ensure via-ir is enabled
+   - Verify optimization settings (enabled, 200 runs)
+   - Use the exact flattened source code
+
+2. **Constructor Arguments Error**
+   - Ensure ABI encoding is correct
+   - Check wallet addresses are valid
+   - Verify router address is correct
+
+3. **Dependency Issues**
+   - Run `forge install` to install dependencies
+   - Check remappings in `foundry.toml`
+   - Ensure OpenZeppelin contracts are installed
+
+4. **Verification Script Issues**
+   - Check API key is valid
+   - Ensure contract is deployed on correct network
+   - Verify contract address is correct
+
+## 📈 Post-Deployment Steps
+
+### For LUV8 Token:
+1. Add liquidity to QuickSwap
+2. Configure reflection settings
+3. Test token transfers
+4. Set up marketing wallet
+5. Configure additional parameters
+
+### For Airdrop Contract:
+1. Deposit tokens to airdrop contract
+2. Configure airdrop amounts
+3. Test airdrop functionality
+4. Set up distribution strategy
+5. Monitor airdrop claims
+
+## 📋 Deployment Documentation
+
+### AIRDROP_DEPLOYMENT_SUMMARY.md
+Complete documentation of the ShambaLuvAirdrop deployment including:
+- ✅ Contract deployment details and addresses
+- ✅ Verification settings and status
+- ✅ Block explorer links
+- ✅ Contract features and functionality
+- ✅ Integration with LUV8 ecosystem
+- ✅ Technical specifications
+- ✅ Next steps and recommendations
+- ✅ Useful commands for contract interaction
+
+**Location**: `deploy/AIRDROP_DEPLOYMENT_SUMMARY.md`
+
+## 🔗 Useful Commands
+
+### Check Contract Status
+```bash
+# Check if contract is verified
+curl "https://api.polygonscan.com/api?module=contract&action=getabi&address=YOUR_CONTRACT_ADDRESS&apikey=YOUR_API_KEY"
+```
+
+### Generate Constructor Arguments
+```bash
+# For LUV8 token
+cast abi-encode "constructor(address,address,address)" "TEAM_WALLET" "LIQUIDITY_WALLET" "ROUTER_ADDRESS"
+
+# For airdrop contract
+cast abi-encode "constructor(address)" "TOKEN_ADDRESS"
+```
+
+### Check Contract Balance
+```bash
+# Check token balance
+cast balance "CONTRACT_ADDRESS" --rpc-url "https://polygon-rpc.com"
+```
+
+## 📞 Support
+
+For issues or questions:
+1. Check the troubleshooting section above
+2. Review deployment logs in generated files
+3. Verify all environment variables are set correctly
+4. Ensure all dependencies are installed
+
+## 📄 License
+
+This deployment template is provided as-is for educational and development purposes. Use at your own risk and ensure proper testing before mainnet deployment.
+
+---
+
+**Template Version**: 1.0  
+**Last Updated**: $(date)  
+**Verified Contracts**: ✅ LUV8 Token, ✅ ShambaLuvAirdrop 
