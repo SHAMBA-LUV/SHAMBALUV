@@ -253,7 +253,7 @@ The SHAMBA LUV contract demonstrates **excellent production readiness** with:
 ### **Contract Details**
 - **Contract Name**: SHAMBALUV
 - **Token Symbol**: LUV
-- **Token Name**: SHAMBA LUV
+- **Token Name**: SHAMBA
 - **Decimals**: 18
 - **Total Supply**: 100,000,000,000,000,000 (100 Quadrillion)
 - **Solidity Version**: ^0.8.23
