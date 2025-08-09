@@ -1,5 +1,4 @@
-# 🚀 SHAMBA LUV Deployment Template
-<a href="https://luv.pythai.net">SHAMBA LUV</a><br />
+# 🚀 <a href="https://luv.pythai.net">SHAMBA LUV</a> is pricesless
 https://polygonscan.com/token/0x1035760d0f60B35B63660ac0774ef363eAa5456e<br />
 ShambaLuvAirdrop<br />
 https://polygonscan.com/address/0x583F6D336E777c461FbfbeE3349D7D2dA9dc5e51#code<br />
@@ -56,7 +55,8 @@ LUV8_CONTRACT_ADDRESS=0xYourLUV8ContractAddress
 
 ## 🎯 Deployment Scripts
 
-### SHAMBA LUV Token Deployment (`deploy-live.sh`)
+### <a href="https://luv.pythai.net">SHAMBA LUV</a><br />
+ Token Deployment (`deploy-live.sh`)
 
 Deploys the main LUV8 token contract with reflection mechanism and advanced features.
 
@@ -262,7 +262,7 @@ curl "https://api.polygonscan.com/api?module=contract&action=getabi&address=YOUR
 
 ### Generate Constructor Arguments
 ```bash
-# For LUV8 token
+# SHAMBA LUV
 cast abi-encode "constructor(address,address,address)" "TEAM_WALLET" "LIQUIDITY_WALLET" "ROUTER_ADDRESS"
 
 # For airdrop contract
@@ -286,4 +286,5 @@ This deployment template is provided as-is for personal educational and developm
 
 **Template Version**: 1.0  
 **Last Updated**: $(date)  
-**Verified Contracts**: ✅ SHAMBA LUV Token, ✅ ShambaLuvAirdrop 
+**Verified Contracts**: ✅ <a href="https://luv.pythai.net">SHAMBA LUV</a><br />
+ Token, ✅ ShambaLuvAirdrop 
