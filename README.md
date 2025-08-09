@@ -1,4 +1,5 @@
-# 🚀 LUV Deployment Template
+# 🚀 SHAMBA LUV Deployment Template
+guide to sharing LUV<br />
 SHAMBA LUV<br />
 https://polygonscan.com/token/0x1035760d0f60B35B63660ac0774ef363eAa5456e<br />
 ShambaLuvAirdrop<br />
