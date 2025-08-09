@@ -77,7 +77,7 @@ Deploys the main LUV8 token contract with reflection mechanism and advanced feat
 - Liquidity Wallet Address
 - QuickSwap V2 Router Address
 
-### 2. Airdrop Contract Deployment (`deploy-airdrop.sh`)
+### <a href="https://luv.pythai.net">Airdrop**:</a> Contract Deployment (`deploy-airdrop.sh`)
 
 Deploys the ShambaLuvAirdrop contract for flexible token distribution.
 
@@ -104,7 +104,7 @@ Deploys the ShambaLuvAirdrop contract for flexible token distribution.
 
 ### Correct Version Verification (`verify_correct_version.sh`)
 
-Verifies contracts using the exact settings that work for LUV8.
+Verifies contracts using the exact settings that work for ShambaLuv
 
 **Usage:**
 ```bash
@@ -125,7 +125,7 @@ Verifies contracts using the exact settings that work for LUV8.
 
 During deployment, the following scripts are automatically generated:
 
-- `verify-contract.sh` - For LUV8 token verification
+- `verify-contract.sh` - For SHAMBA LUV token verification
 - `verify-airdrop.sh` - For airdrop contract verification
 
 ## 📋 Contract Features
@@ -140,7 +140,7 @@ During deployment, the following scripts are automatically generated:
 - **Emergency Functions**: Stuck balance recovery
 
 ### ShambaLuvAirdrop (`ShambaLuvAirdrop.sol`)
-- **Flexible Airdrops**: Support for any ERC20 token
+- **Flexible <a href="https://luv.pythai.net">Airdrop**:</a> Support for any ERC20 token
 - **One-Time Claims**: Prevents double-claiming
 - **Emergency Controls**: Withdrawal and rescue functions
 - **Admin Management**: Configurable airdrop settings
