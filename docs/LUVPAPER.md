@@ -216,3 +216,68 @@ In this economy:
 ---
 
 *“In Emotonomics, your net worth isn’t how much you hold — it’s how far your gestures reach.”*
+
+
+<svg width="1000" height="1000" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFD700"/>
+      <stop offset="100%" stop-color="#C0C0C0"/>
+    </linearGradient>
+
+    <!-- Arrowhead Marker -->
+    <marker id="arrowhead" markerWidth="16" markerHeight="16" refX="12" refY="5" orient="auto">
+      <polygon points="0 0, 16 5, 0 10" fill="url(#arrowGradient)" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <circle cx="500" cy="500" r="480" fill="white" />
+
+  <!-- Center Coin (Perfectly Centered) -->
+  <image href="SHAMBALUV.png" x="250" y="250" width="500" height="500" />
+
+  <!-- Stage Positions (Massive Circles, Green/Gold/Silver Theme) -->
+  <!-- Seed -->
+  <g id="seed">
+    <circle cx="500" cy="100" r="100" fill="#2E7D32" />
+    <text x="500" y="105" text-anchor="middle" dy="8" font-size="28" font-weight="bold" fill="white">Seed</text>
+  </g>
+
+  <!-- Amplify -->
+  <g id="amplify">
+    <circle cx="900" cy="350" r="100" fill="#FFD700" />
+    <text x="900" y="355" text-anchor="middle" dy="8" font-size="28" font-weight="bold" fill="black">Amplify</text>
+  </g>
+
+  <!-- Resonate -->
+  <g id="resonate">
+    <circle cx="750" cy="900" r="100" fill="#C0C0C0" />
+    <text x="750" y="905" text-anchor="middle" dy="8" font-size="28" font-weight="bold" fill="black">Resonate</text>
+  </g>
+
+  <!-- Harvest -->
+  <g id="harvest">
+    <circle cx="250" cy="900" r="100" fill="#2E7D32" />
+    <text x="250" y="905" text-anchor="middle" dy="8" font-size="28" font-weight="bold" fill="white">Harvest</text>
+  </g>
+
+  <!-- Compound -->
+  <g id="compound">
+    <circle cx="100" cy="350" r="100" fill="#FFD700" />
+    <text x="100" y="355" text-anchor="middle" dy="8" font-size="28" font-weight="bold" fill="black">Compound</text>
+  </g>
+
+  <!-- Connecting Arrows -->
+  <g id="arrows" stroke="url(#arrowGradient)" stroke-width="10" fill="none" marker-end="url(#arrowhead)">
+    <path d="M500 200 Q 740 200 820 300" />
+    <path d="M960 400 Q 960 650 820 820" />
+    <path d="M700 960 Q 500 1040 300 960" />
+    <path d="M180 820 Q 40 600 80 400" />
+    <path d="M140 280 Q 300 160 480 140" />
+  </g>
+
+</svg>
+
