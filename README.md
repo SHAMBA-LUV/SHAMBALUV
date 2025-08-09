@@ -287,7 +287,7 @@ This deployment template is provided as-is for personal educational and developm
 
 ---
 
-**Template Version**: 1.0  
+**SHAMBA LUV**: 1.0  
 **Last Updated**: $(date)  
 **Verified Contracts**: ✅ <a href="https://luv.pythai.net">SHAMBA LUV</a><br />
  Token, ✅ ShambaLuvAirdrop 
