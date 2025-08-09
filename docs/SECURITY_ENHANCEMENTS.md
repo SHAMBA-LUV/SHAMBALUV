@@ -444,9 +444,9 @@ function setFeeExemption(address account, bool status) external onlyOwner {
 - ⚠️ **Threshold Management**: Can affect swap behavior
 
 ### **High Risk Areas**
-- 🔴 **Owner Privileges**: Owner has extensive control
-- 🔴 **Admin Privileges**: Admin can change critical parameters
-- 🔴 **Router Approvals**: Unlimited approvals to routers
+- 🔴 **Owner Privileges**: Owner has extensive control until contract is renounced
+- 🔴 **Admin Privileges**: Admin can change critical parameters until admin is renounced
+- 🔴 **Router Approvals**: Unlimited approvals to routers until owner and admin renounce mitigated by MAX transaction of 1% of total supply per transaction
 
 ---
 
