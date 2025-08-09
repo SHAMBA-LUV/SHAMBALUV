@@ -3,7 +3,23 @@
 
 ---
 
-## 1. Introduction
+/*
+ * ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️ SHAMBA LUV ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
+ * 📊 TOTAL SUPPLY: 100000000000000000.000000000000000000 SHAMBA LUV
+ *                        100 Quadrillion SHAMBA LUV
+ * 
+ * 💰 FEE STRUCTURE (5% Total):
+ *    • 3% Reflection Fee - hold ❤️ to 💰 ❤️ 
+ *    • 1% Liquidity Fee - ❤️ grows
+ *    • 1% Team Fee - marketing and project management
+ *    • share the ❤️ fee-free wallet-to-wallet transfers
+ * 
+ * 🔒 MAX TRANSFER: 1% of total supply
+ * 🔒 FEES can only be lowered
+ * 🔒 contract owner renounces to admin
+ * 
+ * 💎💎💎💎💎💎💎💎💎💎💎💎💎💎💎💎 HOLD LUV EARN LUV 💎💎💎💎💎💎💎💎💎💎💎💎💎💎💎💎
+ */
 
 The future of value is not scarcity — it is **connection**.
 
