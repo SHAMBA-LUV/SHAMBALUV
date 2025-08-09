@@ -53,7 +53,7 @@ In this model:
 
 ### 3.1 Blockchain Layer
 - **Network:** Polygon  
-- **Token Standard:** ERC-20 (LUV8)  
+- **Token Standard:** ERC-20 (<a href="https://luv.pythai.net">SHAMBA LUV</a>)  
 - **Fee Model:**  
   - 3% reflections to holders  
   - 1% auto-liquidity  
@@ -91,7 +91,7 @@ The Incentive Distributor is an off-chain + on-chain hybrid engine that:
 
 ## 4. Distribution Philosophy
 
-SHAMBA LUV is **designed to be shared**. It is a gesture first, a token second.
+<a href="https://luv.pythai.net">SHAMBA LUV</a> is **designed to be shared**. It is a gesture first, a token second.
 
 - **Intentional Abundance** — At launch, LUV is so abundant that sending **a million LUV** is common and culturally encouraged.
 - **No Initial Price Tag** — SHAMBA LUV begins life **priceless**, available via sponsored gas airdrops at [luv.pythai.net](https://luv.pythai.net).
@@ -129,7 +129,7 @@ This phase ensures that **participation, not speculation**, defines SHAMBA LUV�
 
 ## 7. Strategic Marketing Approach
 
-SHAMBA LUV’s marketing is **not ads — it’s actions**.
+<a href="https://luv.pythai.net">SHAMBA LUV</a> marketing is **not ads — it’s actions**.
 
 - **IRL Seeding** — Ambassadors hand QR codes and wallet links at live events.
 - **Viral Loops** — Every recipient can forward LUV to multiple new users.
@@ -156,7 +156,7 @@ A future where:
 
 ---
 
-## LUV is priceless
+## <a href="https://luv.pythai.net">LUV</a> is priceless
 
 SHAMBA LUV is the **first implementation of Emotonomics** — an economy powered by **abundance, joy, and participation** rather than scarcity and speculation.
 
