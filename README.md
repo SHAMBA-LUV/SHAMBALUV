@@ -87,7 +87,7 @@ Deploys the ShambaLuvAirdrop contract for flexible token distribution.
 ./deploy/deploy-airdrop.sh
 
 # With specific token address
-./deploy/deploy-airdrop.sh 0xYourTokenAddress
+./deploy/deploy-airdrop.sh 0x1035760d0f60B35B63660ac0774ef363eAa5456e
 ```
 
 **Features:**
