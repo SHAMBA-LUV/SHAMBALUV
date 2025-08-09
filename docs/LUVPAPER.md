@@ -236,38 +236,38 @@ In this economy:
   <!-- Background -->
   <circle cx="500" cy="500" r="480" fill="white" />
 
-  <!-- Center Coin (Perfectly Centered) -->
+  <!-- Center Logo (Perfectly Centered) -->
   <image href="SHAMBALUV.png" x="250" y="250" width="500" height="500" />
 
-  <!-- Stage Positions (Massive Circles, Green/Gold/Silver Theme) -->
+  <!-- Stage Circles (Green, Gold, Silver Theme, Larger Fonts) -->
   <!-- Seed -->
   <g id="seed">
     <circle cx="500" cy="100" r="100" fill="#2E7D32" />
-    <text x="500" y="105" text-anchor="middle" dy="8" font-size="28" font-weight="bold" fill="white">Seed</text>
+    <text x="500" y="110" text-anchor="middle" font-size="36" font-weight="bold" fill="white">Seed</text>
   </g>
 
   <!-- Amplify -->
   <g id="amplify">
     <circle cx="900" cy="350" r="100" fill="#FFD700" />
-    <text x="900" y="355" text-anchor="middle" dy="8" font-size="28" font-weight="bold" fill="black">Amplify</text>
+    <text x="900" y="360" text-anchor="middle" font-size="36" font-weight="bold" fill="black">Amplify</text>
   </g>
 
   <!-- Resonate -->
   <g id="resonate">
     <circle cx="750" cy="900" r="100" fill="#C0C0C0" />
-    <text x="750" y="905" text-anchor="middle" dy="8" font-size="28" font-weight="bold" fill="black">Resonate</text>
+    <text x="750" y="910" text-anchor="middle" font-size="36" font-weight="bold" fill="black">Resonate</text>
   </g>
 
   <!-- Harvest -->
   <g id="harvest">
     <circle cx="250" cy="900" r="100" fill="#2E7D32" />
-    <text x="250" y="905" text-anchor="middle" dy="8" font-size="28" font-weight="bold" fill="white">Harvest</text>
+    <text x="250" y="910" text-anchor="middle" font-size="36" font-weight="bold" fill="white">Harvest</text>
   </g>
 
   <!-- Compound -->
   <g id="compound">
     <circle cx="100" cy="350" r="100" fill="#FFD700" />
-    <text x="100" y="355" text-anchor="middle" dy="8" font-size="28" font-weight="bold" fill="black">Compound</text>
+    <text x="100" y="360" text-anchor="middle" font-size="36" font-weight="bold" fill="black">Compound</text>
   </g>
 
   <!-- Connecting Arrows -->
@@ -280,4 +280,5 @@ In this economy:
   </g>
 
 </svg>
+
 
