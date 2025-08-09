@@ -1,7 +1,7 @@
 
 # 🛡️ Security Enhancements Analysis
 
-## SHAMBA LUV Token Contract (LUV8.sol)
+## SHAMBA LUV Token Contract (LUV.sol)
 
 <div align="center">
 
