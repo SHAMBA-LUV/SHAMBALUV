@@ -200,7 +200,7 @@ cp .env.example .env
 - **Chain ID**: 137
 - **RPC URL**: https://polygon-rpc.com
 - **Block Explorer**: https://polygonscan.com
-- **QuickSwap V2 Router**: `0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff`
+- **<a href="https://polygonscan.com/address/0xa5e0829caced8ffdd4de3c43696c57f7d7a678ff">QuickSwap V2 Router**</a>: `0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff`
 - **QuickSwap V3 Router**: `0xf5b509bB0909a69B1C207E495f687a6C0Ee0989e`
 
 ## 🔍 Troubleshooting
@@ -276,16 +276,11 @@ cast balance "CONTRACT_ADDRESS" --rpc-url "https://polygon-rpc.com"
 ```
 
 ## 📞 Support
-
-For issues or questions:
-1. Check the troubleshooting section above
-2. Review deployment logs in generated files
-3. Verify all environment variables are set correctly
-4. Ensure all dependencies are installed
+luv@pythai.net
 
 ## 📄 License
 
-This deployment template is provided as-is for educational and development purposes. Use at your own risk and ensure proper testing before mainnet deployment.
+This deployment template is provided as-is for personal educational and development purposes to further global abundance and joy as a social standard. Use at your own risk and ensure proper testing before mainnet deployment. LUV is a gesture.
 
 ---
 
