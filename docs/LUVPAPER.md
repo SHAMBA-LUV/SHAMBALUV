@@ -189,6 +189,24 @@ In this economy:
 
 ---
 
+```txt
+[ SEED ]
+   |
+   v
+[ AMPLIFY ] ---> (Social Sharing, Reciprocation)
+   |
+   v
+[ RESONATE ] ---> (Network Feels the Impact)
+   |
+   v
+[ HARVEST ] ---> (Reputation, Social Capital Grows)
+   |
+   v
+[ COMPOUND ] ---> (Influence Expands, More Gestures)
+   |
+   ^ (back to SEED)
+```
+
 **Links**  
 - Website: [luv.pythai.net](https://luv.pythai.net)  
 - Token Contract: [PolygonScan](https://polygonscan.com/token/0x1035760d0f60B35B63660ac0774ef363eAa5456e)  
