@@ -123,4 +123,4 @@ With 200 purchases of 10 trillion LUV each:
 - **Reflections Earned**: 60 billion LUV
 - **Growth Rate**: 0.06% increase
 
-The reflection system correctly collects exactly 3% of all trading volume and distributes it proportionally to holders based on their share of the total supply. The slippage protection ensures the contract's automated swaps are executed at fair rates, protecting the overall ecosystem. 
+The reflection system correctly collects exactly 3% of all trading volume and distributes it proportionally to holders based on their share of the total supply. The slippage protection ensures the contract's automated swaps are executed at fair rates, protecting the overall ecosystem. Hold LUV to watch LUV grow.
