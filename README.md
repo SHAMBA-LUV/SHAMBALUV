@@ -201,7 +201,7 @@ cp .env.example .env
 - **RPC URL**: https://polygon-rpc.com
 - **Block Explorer**: https://polygonscan.com
 - **<a href="https://polygonscan.com/address/0xa5e0829caced8ffdd4de3c43696c57f7d7a678ff">QuickSwap V2 Router**</a>: `0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff`
-- **QuickSwap V3 Router**: `0xf5b509bB0909a69B1C207E495f687a6C0Ee0989e`
+- **<a href="https://polygonscan.com/address/0xf5b509bb0909a69b1c207e495f687a596c168e12#code">QuickSwap V3 Router**</a>: `0xf5b509bB0909a69B1C207E495f687a6C0Ee0989e`
 
 ## 🔍 Troubleshooting
 
