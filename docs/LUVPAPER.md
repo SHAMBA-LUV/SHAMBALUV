@@ -163,7 +163,7 @@ SHAMBA LUV is the **first implementation of Emotonomics** — an economy powered
 In this economy:
 - Your **balance sheet** is your gesture history.
 - Your **wealth** is your community impact.
-- Your **currency** is love.
+- Your **currency** is <a href="https://luv.pythai.net">LUV</a>
 
 ---
 
