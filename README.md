@@ -130,7 +130,7 @@ During deployment, the following scripts are automatically generated:
 
 ## 📋 Contract Features
 
-### LUV Token (`LUV8.sol`)
+### <a href="https://polygonscan.com/token/0x1035760d0f60B35B63660ac0774ef363eAa5456e">SMAMBA LUV Token</a> (`LUV8.sol`)
 - **Reflection Mechanism**: Automatic token distribution to holders
 - **Liquidity Management**: Automatic liquidity provision
 - **Security Features**: Timelock, slippage protection
@@ -139,7 +139,7 @@ During deployment, the following scripts are automatically generated:
 - **Admin Controls**: Comprehensive admin functions
 - **Emergency Functions**: Stuck balance recovery
 
-### ShambaLuvAirdrop (`ShambaLuvAirdrop.sol`)
+### <a href="https://luv.pythai.net">ShambaLuvAirdrop</a> (`ShambaLuvAirdrop.sol`)
 - **Flexible <a href="https://luv.pythai.net">Airdrop**:</a> Support for any ERC20 token
 - **One-Time Claims**: Prevents double-claiming
 - **Emergency Controls**: Withdrawal and rescue functions
