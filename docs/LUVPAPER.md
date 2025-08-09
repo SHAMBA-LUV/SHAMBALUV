@@ -29,7 +29,7 @@ In the 20th century, money was scarce and hoarded.
 In the 21st century, memes became abundant and shared.  
 SHAMBA LUV merges these worlds to create the **first large-scale emotonomic protocol** — a system where **gestures, attention, and community impact** become units of value stored *on-chain*.
 
-SHAMBA LUV is not just a meme coin. It is:
+SHAMBA LUV is:
 - A **digital gesture** designed for giving.
 - A **cultural signal** designed to spread.
 - A **social currency** designed to measure connection.
