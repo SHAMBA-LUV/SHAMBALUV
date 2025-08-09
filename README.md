@@ -180,7 +180,7 @@ cp .env.example .env
 
 ### For PolygonScan Verification:
 
-1. **Go to Contract Page**: [https://polygonscan.com/address/YOUR_CONTRACT_ADDRESS](https://polygonscan.com/token/0x1035760d0f60B35B63660ac0774ef363eAa5456e)
+1. **Go to Contract Page**: [SHMABA LUV official contract](https://polygonscan.com/token/0x1035760d0f60B35B63660ac0774ef363eAa5456e)
 2. **Click "Contract" tab**
 3. **Click "Verify and Publish"**
 4. **Fill in the verification form**:
