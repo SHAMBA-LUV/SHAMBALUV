@@ -1,4 +1,4 @@
-<a href="https://luv.pythai.net">SHAMBA LUV</a>
+<a href="https://luv.pythai.net">SHAMBA LUV</a> LUV is priceless. LUV is the answer.
 owner
 0x16666644043AECB616A061F0AF42745d0d7390c4
 liquidity
@@ -14,7 +14,7 @@ development
 0x2000005b9a3766609ED0F5c1C14fFe7B7b3D80d4
 founders
 0x33336913A6f376ba532Ed85c133B7210D7AB5F1b
-infrstructure
+infrastructure
 0x900b85D9F19759907c3c2Ed16CBF8402BFb33333
 liquidity provision
 0xAc0c799be737D6F937D11fe5Fb138d04D3377777
