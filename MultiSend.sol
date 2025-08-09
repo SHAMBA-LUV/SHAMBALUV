@@ -19,6 +19,8 @@ contract MultiSend is Ownable2Step, ReentrancyGuard, Pausable {
     using SafeERC20 for IERC20;
 
     uint256 public maxBatchSize = 500; // tune based on gas measurements on Polygon
+    // Optional per-token default amount (in smallest unit)
+    mapping(address => uint256) public defaultAmountPerRecipient;
 
     event MultiSendERC20(address indexed token, uint256 recipients, uint256 totalAmount);
     event MultiSendNative(uint256 recipients, uint256 totalAmount);
@@ -27,6 +29,7 @@ contract MultiSend is Ownable2Step, ReentrancyGuard, Pausable {
     event WithdrawNative(address indexed to, uint256 amount);
     event RecoverERC20(address indexed token, address indexed to, uint256 amount);
     event RecoverNative(address indexed to, uint256 amount);
+    event DefaultAmountUpdated(address indexed token, uint256 amount);
 
     constructor() Ownable(msg.sender) {}
 
@@ -39,6 +42,13 @@ contract MultiSend is Ownable2Step, ReentrancyGuard, Pausable {
 
     function pause() external onlyOwner { _pause(); }
     function unpause() external onlyOwner { _unpause(); }
+
+    // -------- Default amount config --------
+    function setDefaultERC20Amount(address token, uint256 amount) external onlyOwner {
+        require(token != address(0), "token=0");
+        defaultAmountPerRecipient[token] = amount;
+        emit DefaultAmountUpdated(token, amount);
+    }
 
     // -------- ERC20 multisend (variable amounts) --------
     function multiSendERC20(
@@ -89,6 +99,53 @@ contract MultiSend is Ownable2Step, ReentrancyGuard, Pausable {
         emit MultiSendERC20(token, n, total);
     }
 
+    // Use stored default amount for token
+    function multiSendERC20UsingDefault(
+        address token,
+        address[] calldata recipients
+    ) external onlyOwner nonReentrant whenNotPaused {
+        uint256 amount = defaultAmountPerRecipient[token];
+        require(amount > 0, "default=0");
+        uint256 n = recipients.length;
+        require(n > 0 && n <= maxBatchSize, "bad batch");
+
+        uint256 total = amount * n;
+        IERC20 erc = IERC20(token);
+        require(erc.balanceOf(address(this)) >= total, "insufficient balance");
+
+        for (uint256 i = 0; i < n; ) {
+            erc.safeTransfer(recipients[i], amount);
+            unchecked { ++i; }
+        }
+        emit MultiSendERC20(token, n, total);
+    }
+
+    // Split a total amount equally across recipients (distributes remainder to first addresses)
+    function multiSendERC20EqualSplit(
+        address token,
+        address[] calldata recipients,
+        uint256 totalAmount
+    ) external onlyOwner nonReentrant whenNotPaused {
+        require(token != address(0), "token=0");
+        uint256 n = recipients.length;
+        require(n > 0 && n <= maxBatchSize, "bad batch");
+        require(totalAmount > 0, "total=0");
+
+        IERC20 erc = IERC20(token);
+        require(erc.balanceOf(address(this)) >= totalAmount, "insufficient balance");
+
+        uint256 per = totalAmount / n;
+        require(per > 0, "per=0");
+        uint256 rem = totalAmount - per * n; // remainder
+
+        for (uint256 i = 0; i < n; ) {
+            uint256 amt = per + (i < rem ? 1 : 0);
+            erc.safeTransfer(recipients[i], amt);
+            unchecked { ++i; }
+        }
+        emit MultiSendERC20(token, n, totalAmount);
+    }
+
     // -------- Native MATIC multisend (variable amounts) --------
     function multiSendNative(
         address[] calldata recipients,
@@ -132,6 +189,29 @@ contract MultiSend is Ownable2Step, ReentrancyGuard, Pausable {
         emit MultiSendNative(n, total);
     }
 
+    // Split native total equally across recipients (distributes remainder wei to first addresses)
+    function multiSendNativeEqualSplit(
+        address[] calldata recipients,
+        uint256 totalAmount
+    ) external onlyOwner nonReentrant whenNotPaused {
+        uint256 n = recipients.length;
+        require(n > 0 && n <= maxBatchSize, "bad batch");
+        require(totalAmount > 0, "total=0");
+        require(address(this).balance >= totalAmount, "insufficient native");
+
+        uint256 per = totalAmount / n;
+        require(per > 0, "per=0");
+        uint256 rem = totalAmount - per * n;
+
+        for (uint256 i = 0; i < n; ) {
+            uint256 amt = per + (i < rem ? 1 : 0);
+            (bool ok, ) = payable(recipients[i]).call{ value: amt }("");
+            require(ok, "native transfer failed");
+            unchecked { ++i; }
+        }
+        emit MultiSendNative(n, totalAmount);
+    }
+
     // Withdraw/sweep (partial)
     function withdrawERC20(address token, address to, uint256 amount) external onlyOwner nonReentrant {
         require(token != address(0) && to != address(0), "addr=0");
@@ -164,6 +244,5 @@ contract MultiSend is Ownable2Step, ReentrancyGuard, Pausable {
 
     receive() external payable {}
 }
-
 
 
