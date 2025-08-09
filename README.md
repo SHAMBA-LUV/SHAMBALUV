@@ -230,12 +230,15 @@ cp .env.example .env
 
 ## 📈 Post-Deployment Steps
 
-### For Airdrop Contract:
+### Dev For Airdrop Contract:
 1. Deposit tokens to airdrop contract
 2. Configure airdrop amounts
 3. Test airdrop functionality
 4. Set up distribution strategy
 5. Monitor airdrop claims
+
+## Participant for Airdrop Contract
+<a href="https://luv.pythai.net">SHAMBA LUV</a>
 
 ## 📋 Deployment Documentation
 
