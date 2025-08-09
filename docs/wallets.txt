@@ -4,6 +4,8 @@ owner
 liquidity
 0x9E5e48aaE6D86c049053eeeD0a125C0f3635693F
 
+SHAMBA LUV is a digital gesture designed to spread abundance, fun, and community vibes for social sharing building an emotional economy where gestures are stored on-chain giving attention, gestures, and community impact true value
+
 team
 0x2Ab888888004fEF6B6Fa020edFd067139266F67C
 community
