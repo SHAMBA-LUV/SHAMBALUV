@@ -623,4 +623,4 @@ For security-related inquiries or vulnerability reports:
 
 ---
 
-*This security analysis was conducted based on industry standards and best practices as of July 2025. Regular updates and reviews are recommended to maintain security posture.* 
+*This security analysis was conducted based on industry standards and best practices as of July 2025. Regular updates and reviews are recommended to maintain security posture.* refer to <a href="https://github.com/SHAMBA-LUV/SHAMBALUV/blob/main/docs/SECURITY_ENHANCEMENTS.md">security enhancements</a> for comprehensive audit of actual SHAMBA LUV
