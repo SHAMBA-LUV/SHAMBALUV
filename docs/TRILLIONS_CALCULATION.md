@@ -123,7 +123,7 @@ With 200 purchases of 10 trillion LUV each:
 - **Reflections Earned**: 60 billion LUV
 - **Growth Rate**: 0.06% increase
 
-TOTAL SUPPLY=100 000 000 000 000 000
+TOTAL SUPPLY=100 000 000 000 000 000<br />
 MAX transaction is 1 quadrillion LUV 1% of TOTAL SUPPLY can only be increased swap cannot be disabled. LUV is ...
 
 The reflection system correctly collects exactly 3% of all trading volume and distributes it proportionally to holders based on their share of the total supply. The slippage protection ensures the contract's automated swaps are executed at fair rates, protecting the overall ecosystem. Liquidity Pair is locked. Hold LUV to watch LUV grow. Above assumes reflection from percentage of total supply and is not based on circulating supply. Liquidity Pair is exempt from reflections.
