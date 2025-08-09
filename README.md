@@ -3,8 +3,8 @@ SHAMBA LUV<br />
 https://polygonscan.com/token/0x1035760d0f60B35B63660ac0774ef363eAa5456e<br />
 ShambaLuvAirdrop<br />
 https://polygonscan.com/address/0x583F6D336E777c461FbfbeE3349D7D2dA9dc5e51#code<br />
-MultiSend
-0x9a87e72e32bB8fb3b61655f07ee340099FEFA534
+MultiSend<br />
+https://polygonscan.com/address/0x9a87e72e32bb8fb3b61655f07ee340099fefa534#code<br />
 
 ```txt
 SHAMBA LUV is a digital gesture designed to spread abundance, fun, and community vibes for social sharing building an emotional economy where gestures are stored on-chain giving attention, gestures, and community impact true value
