@@ -14,7 +14,7 @@ SHAMBA LUV contract address on polygon blockchain
 0x1035760d0f60B35B63660ac0774ef363eAa5456e
 ```
 
-This folder contains a comprehensive deployment template for the gesture based SHAMBA LUV cryptosystem, including the main token contract and airdrop contract<br />
+This folder contains a comprehensive deployment template for the gesture based SHAMBA LUV cryptosystem, including the main token contract and airdrop contract. This repo is provided to the blockchain community at large as a transparent guide to show the creation of LUV and the sharing of LUV to create emotonomic gesture based value. Share the LUV.<br />
 
 ## 📁 File Structure
 
