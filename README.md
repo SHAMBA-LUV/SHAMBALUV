@@ -296,4 +296,6 @@ This deployment template is provided as-is for personal educational and developm
 **<a href="https://luv.pythai.net">SHAMBA LUV</a>**: 1.0  
 **Last Updated**: $(date)  
 **Verified Contracts**: ✅ <a href="https://luv.pythai.net">SHAMBA LUV</a><br />
- Token, ✅ ShambaLuvAirdrop 
+ Token, ✅ ShambaLuvAirdrop<br /><br />
+
+ <a href="https://youtu.be/dcRR__y1SYM?si=ECzDmJNbdgAoAaYH">Attract True Wealth | Alan Watts</a>
