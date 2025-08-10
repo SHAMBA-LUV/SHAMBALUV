@@ -1,6 +1,3 @@
-Whitepaper.md
-code
-Markdown
 # The Emotonomic Truth Engine: A Blueprint for a Self-Sustaining Protocol
 
 **Version 2.0.0 (Final Vision)**
