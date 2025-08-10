@@ -84,7 +84,7 @@ Data that accumulates significant LUV proves its social value and becomes a cand
 -   **Purpose:** As the gesture token, LUV is designed for high-velocity circulation. It is used to measure social consensus, build reputation, and signal value. Its worth is in its use, not its price.
 -   **Tokenomics:** The 3/1/1 fee structure (Reflections/Liquidity/Marketing) is a **redistribution of emotional influence**, rewarding active participation and sustaining the network's cultural presence.
 
-#### **Settlement Asset (e.g., USDC, ETH) — The Currency of Harvest**
+#### **Settlement Asset (LUV, USDC, POL, ETH, BTC) — The Currency of Harvest**
 -   **Purpose:** This is a scarce asset used to capture real-world economic value. It is used to pay for the system's operational costs (storage, compute) and to distribute tangible profits back to participants.
 
 **The cycle is simple:** The flow of abundant **$LUV** identifies what is valuable. The payment of scarce **USDC/ETH** harvests and distributes that value.
