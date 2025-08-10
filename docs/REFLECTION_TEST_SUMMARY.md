@@ -39,7 +39,7 @@ uint256 reflectionAmount = (holderBalance * delta) / REFLECTION_DENOMINATOR;
 
 ### **Mathematical Verification**
 - **Transfer Amount**: 1 trillion LUV tokens
-- **Expected Reflection Fee**: 30 trillion LUV (3% of 1 trillion)
+- **Expected Reflection Fee**: 30 billion LUV (3% of 1 trillion)
 - **Actual Results**: ✅ Matches expected calculations
 
 ### **Batch Processing Verification**
