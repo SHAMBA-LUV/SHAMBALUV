@@ -136,7 +136,7 @@ During deployment, the following scripts are automatically generated:
 
 ## 📋 Contract Features
 
-### <a href="https://polygonscan.com/token/0x1035760d0f60B35B63660ac0774ef363eAa5456e">SMAMBA LUV Token</a> (`LUV8.sol`)
+### <a href="https://polygonscan.com/token/0x1035760d0f60B35B63660ac0774ef363eAa5456e">SMAMBA LUV Token</a> (`LUV`)
 - **Reflection Mechanism**: Automatic token distribution to holders
 - **Liquidity Management**: Automatic liquidity provision
 - **Security Features**: Timelock, slippage protection
