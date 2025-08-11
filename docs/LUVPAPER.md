@@ -111,7 +111,7 @@ The Incentive Distributor is an off-chain + on-chain hybrid engine that:
 
 ---
 
-## 4. Distribution Philosophy
+## Distribution Philosophy
 
 <a href="https://luv.pythai.net">SHAMBA LUV</a> is **designed to be shared**. It is a gesture first, a token second.
 
@@ -124,7 +124,7 @@ This phase ensures that **participation, not speculation**, defines SHAMBA LUV�
 
 ---
 
-## 5. Why Emotonomics Works
+## Why Emotonomics Works
 
 1. **Abundance Increases Spread**  
    In scarcity economies, excess supply kills value. In emotonomics, excess supply *accelerates adoption*.
@@ -140,7 +140,7 @@ This phase ensures that **participation, not speculation**, defines SHAMBA LUV�
 
 ---
 
-## 6. Use Cases
+## Use Cases
 
 - **Community Recognition** — Reward contributors in DAOs, clubs, and online groups.
 - **Event Amplification** — Deploy LUV Bomb campaigns to saturate causes and events with attention.
@@ -149,7 +149,7 @@ This phase ensures that **participation, not speculation**, defines SHAMBA LUV�
 
 ---
 
-## 7. Strategic Marketing Approach
+## Strategic Marketing Approach
 
 <a href="https://luv.pythai.net">SHAMBA LUV</a> marketing is **not ads — it’s actions**.
 
@@ -162,7 +162,7 @@ Marketing here is not about buying impressions — it’s about *engineering emo
 
 ---
 
-## 8. Vision
+## Vision
 
 The goal is to make SHAMBA LUV the **universal gesture protocol** for the internet.  
 A standard layer for:
@@ -216,5 +216,3 @@ In this economy:
 ---
 
 *“In Emotonomics, your net worth isn’t how much you hold — it’s how far your gestures reach.”*
-
-
