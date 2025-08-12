@@ -77,15 +77,15 @@ Expected Reflections = (60 trillion × 0.1%) = 60 billion LUV
 
 ## Key Insights
 
-1. **Exact 3% Reflection Fee**: The contract correctly collects exactly 3% of each transaction volume for reflections.
+ **Exact 3% Reflection Fee**: The contract correctly collects exactly 3% of each transaction volume for reflections.
 
-2. **Proportional Distribution**: Holders receive reflections proportional to their share of total supply (0.1% in this case).
+ **Proportional Distribution**: Holders receive reflections proportional to their share of total supply (0.1% in this case).
 
-3. **Linear Scaling**: Reflection earnings scale linearly with trading volume.
+ **Linear Scaling**: Reflection earnings scale linearly with trading volume.
 
-4. **Significant Earnings**: With 10 trillion purchases, the holder earns 60 billion LUV in reflections.
+ **Significant Earnings**: With 10 trillion purchases, the holder earns 60 billion LUV in reflections.
 
-5. **Percentage Growth**: The holder's balance increases by 0.06% with 200 large purchases.
+ **Percentage Growth**: The holder's balance increases by 0.06% with 200 large purchases.
 
 ## Verification Points
 
