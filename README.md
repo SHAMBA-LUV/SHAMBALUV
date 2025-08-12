@@ -118,7 +118,7 @@ Verifies contracts using the exact settings that work for ShambaLuv
 ./deploy/verify_correct_version.sh
 
 # With contract address
-./deploy/verify_correct_version.sh 0xYourContractAddress
+./deploy/verify_correct_version.sh 0x1035760d0f60B35B63660ac0774ef363eAa5456e
 ```
 
 **Confirmed Working Settings:**
@@ -162,7 +162,7 @@ cp .env.example .env
 # Edit .env with your values
 ```
 
-### Step 2: Deploy LUV8 Token
+### Step 2: Deploy <a href="https://luv.pythai.net">SHAMBA LUV</a> Token
 ```bash
 ./deploy/deploy-live.sh
 ```
@@ -175,11 +175,11 @@ cp .env.example .env
 
 ### Step 4: Verify Contracts
 ```bash
-# Verify LUV8 token
-./deploy/verify_correct_version.sh 0xYourLUV8ContractAddress
+# Verify LUV token
+./deploy/verify_correct_version.sh 0x1035760d0f60B35B63660ac0774ef363eAa5456e
 
 # Verify airdrop contract
-./deploy/verify_correct_version.sh 0xYourAirdropContractAddress
+./deploy/verify_correct_version.sh 0x583F6D336E777c461FbfbeE3349D7D2dA9dc5e51
 ```
 
 ## 🔧 Manual Verification
