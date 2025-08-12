@@ -43,8 +43,8 @@ deploy/
 ### Environment Variables (.env file)
 ```bash
 # Wallet Configuration
-TEAM_WALLET=0xYourTeamWalletAddress
-LIQUIDITY_WALLET=0xYourLiquidityWalletAddress
+TEAM_WALLET=0x2Ab888888004fEF6B6Fa020edFd067139266F67C
+LIQUIDITY_WALLET=0x9E5e48aaE6D86c049053eeeD0a125C0f3635693F
 PRIVATE_KEY=0xYourPrivateKey
 
 # API Keys
