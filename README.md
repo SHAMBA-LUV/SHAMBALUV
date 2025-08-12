@@ -51,7 +51,7 @@ PRIVATE_KEY=0xYourPrivateKey
 ETHERSCAN_API_KEY=YourEtherscanApiKey
 
 # Optional: LUV8 Contract Address (for airdrop deployment)
-LUV8_CONTRACT_ADDRESS=0xYourLUV8ContractAddress
+LUV_CONTRACT_ADDRESS=0x1035760d0f60B35B63660ac0774ef363eAa5456e
 ```
 
 ### Dependencies
