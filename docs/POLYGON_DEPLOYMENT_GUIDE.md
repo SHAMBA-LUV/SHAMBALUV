@@ -1,4 +1,5 @@
-# ShambaLuv Token (LUV8.sol) - Polygon Mainnet Deployment Guide
+# ShambaLuv Token (LUV.sol) - Polygon Mainnet Deployment Guide
+This is how we do it... with LUV from the SHAMBA LUV community
 
 ## Overview
 
@@ -24,7 +25,6 @@ This guide provides step-by-step instructions for deploying the ShambaLuv token 
 - **Admin Management**: Secure admin role management
 
 ## Prerequisites
-
 ### Required Software
 - [Foundry](https://getfoundry.sh/) (latest version)
 - [Git](https://git-scm.com/)
