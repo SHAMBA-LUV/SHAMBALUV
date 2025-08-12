@@ -3,7 +3,7 @@
 ## 🎉 **DEPLOYMENT SUCCESSFUL**
 
 **Network:** Polygon Mainnet  
-**Contract:** LUV8.sol (ShambaLuv)  
+**Contract:** LUV.sol (ShambaLuv)  
 **Deployment Date:** August 5, 2025  
 **Deployment Time:** 22:46 UTC  
 
