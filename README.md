@@ -64,7 +64,7 @@ LUV_CONTRACT_ADDRESS=0x1035760d0f60B35B63660ac0774ef363eAa5456e
 ### <a href="https://luv.pythai.net">SHAMBA LUV</a><br />
  Token Deployment (`deploy-live.sh`)
 
-Deploys the main SHAMBA LUV token contract with reflection mechanism and advanced security features.
+Deploys the main SHAMBA LUV token contract with reflection mechanism and holder protection.
 
 **Usage:**
 ```bash
