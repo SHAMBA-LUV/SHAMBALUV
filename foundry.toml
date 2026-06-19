@@ -1,0 +1,31 @@
+# SHAMBA LUV — Foundry config for the CORRECTED suite (ShambaLuv.sol + ShambaLuvAirdrop.sol).
+# The legacy LUV*.sol / verification / flattened files are the historical record of the live
+# Polygon deployment (they require solc 0.8.30); they are SKIPPED here so the corrected, self-
+# contained contracts build + test in isolation. See AUDIT.md.
+[profile.default]
+src = "contracts"
+test = "test"
+out = "out"
+libs = []
+solc = "0.8.24"
+optimizer = true
+optimizer_runs = 200
+via_ir = true
+auto_detect_remappings = false
+skip = [
+  "contracts/LUV.sol",
+  "contracts/LUV2.sol",
+  "contracts/LUV3.sol",
+  "contracts/LUV4.sol",
+  "contracts/LUV5.sol",
+  "contracts/LUV6.sol",
+  "contracts/LUV7.sol",
+  "contracts/LUV8.sol",
+  "contracts/LUV8_flattened.sol",
+  "contracts/LUV100Q.sol",
+  "contracts/LUV_polygonscan.sol",
+  "contracts/CC.sol",
+  "contracts/basis.sol",
+  "contracts/MultiSend.sol",
+  "contracts/ShambaLuvAirdop_VERIFICATION.sol",
+]

@@ -1,460 +1,200 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.23;
+pragma solidity ^0.8.24;
 
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
-import "@openzeppelin/contracts/security/Pausable.sol";
-import "@openzeppelin/contracts/utils/Address.sol";
-
-/**
- * @title ShambaLuvAirdrop
- * @dev Enhanced airdrop contract for SHAMBA LUV token with ETH and ERC20 support
- * @notice Automatically gives tokens to new users who connect their wallet
- * @notice Includes emergency functions and comprehensive safety features
+/*
+ * ❤️ ShambaLuvAirdrop — the "digital gesture": 1 trillion LUV to every real new signup.
+ *
+ * REPLACES the original claim contract, which was SYBIL-TRIVIAL: any address could call
+ * `claimAirdrop()` and pull 1T LUV, gated only by `hasClaimed[wallet]` — so one person with
+ * N wallets drained it; all anti-abuse lived off-chain and was bypassable.
+ *
+ * This version is SIGNATURE-GATED. Our self-hosted social-login backend provisions a wallet
+ * for each new social identity (Google/Apple/X/Discord/… — no thirdweb, no monthly fee) and
+ * signs ONE EIP-712 claim voucher per identity. Only a voucher signed by the configured
+ * `signer` can release LUV. The Sybil gate is therefore "one real social account = one claim",
+ * enforced cryptographically on-chain and by identity (not by wallet) off-chain.
+ *
+ * Self-contained (zero imports), inline EIP-712 + ECDSA (EIP-2 malleability rejected).
+ *   claim(recipient, amount, nonce, deadline, signature)
  */
-contract ShambaLuvAirdrop is Ownable, ReentrancyGuard, Pausable {
-    using Address for address payable;
+contract ShambaLuvAirdrop {
+    // ───────── token / config ─────────
+    address public immutable token; // SHAMBA LUV
+    uint256 public claimAmount = 1_000_000_000_000 * 1e18; // 1 trillion LUV per signup (the gesture)
 
-    IERC20 public immutable shambaLuvToken;
-    
-    // Airdrop amount per user (1 trillion tokens with 18 decimals)
-    uint256 public airdropAmount = 1_000_000_000_000 * 1e18;
-    
-    // Track who has already claimed
-    mapping(address => bool) public hasClaimed;
-    
-    // Custom airdrop amounts for future incentives
-    mapping(address => uint256) public customAirdropAmounts;
-    
-    // Stats
+    // Hard cap on the whole campaign: 1% of the 100-Quadrillion supply = 1 Quadrillion LUV
+    // (1,000 trillion). At 1 trillion/signup that funds exactly 1,000 gestures. Enforced
+    // on-chain so the giveaway can never exceed 1% even if the contract is over-funded.
+    uint256 public constant AIRDROP_CAP = 1_000_000_000_000_000 * 1e18; // 1e33 base units
+
+    address public owner; // deposits/withdraws/config (renounceable)
+    address public signer; // the backend voucher key (rotatable; NOT the owner)
+    bool public paused;
+
+    mapping(uint256 => bool) public usedNonce; // one voucher per nonce (per social identity)
+    mapping(address => bool) public hasClaimed; // belt-and-suspenders: one claim per wallet
     uint256 public totalClaimed;
-    uint256 public totalRecipients;
-    
-    // Rate limiting
-    uint256 public maxClaimsPerBlock = 10;
-    uint256 public currentBlockClaims;
-    uint256 public lastClaimBlock;
-    
-    // Emergency controls
-    bool public emergencyMode = false;
-    uint256 public maxTotalClaims = 3000; // Maximum number of total claims allowed
-    
-    // Events
-    event AirdropClaimed(address indexed recipient, uint256 amount);
-    event AirdropAmountUpdated(uint256 oldAmount, uint256 newAmount);
-    event CustomAirdropAmountsSet(address[] recipients, uint256[] amounts);
-    event CustomAirdropAmountsRemoved(address[] recipients);
-    event TokensWithdrawn(address indexed owner, uint256 amount);
-    event ETHReceived(address indexed sender, uint256 amount);
-    event ETHWithdrawn(address indexed owner, uint256 amount);
-    event ERC20Withdrawn(address indexed token, address indexed owner, uint256 amount);
-    event EmergencyModeToggled(bool enabled);
-    event MaxClaimsUpdated(uint256 oldMax, uint256 newMax);
-    event MaxTotalClaimsUpdated(uint256 oldMax, uint256 newMax);
-    event RateLimitReset(uint256 blockNumber);
-    
-    constructor(address _shambaLuvToken) {
-        require(_shambaLuvToken != address(0), "Invalid token address");
-        shambaLuvToken = IERC20(_shambaLuvToken);
-    }
-    
-    /**
-     * @dev Receive ETH function
-     */
-    receive() external payable {
-        emit ETHReceived(msg.sender, msg.value);
-    }
-    
-    /**
-     * @dev Fallback function
-     */
-    fallback() external payable {
-        emit ETHReceived(msg.sender, msg.value);
-    }
-    
-    /**
-     * @dev Claim airdrop tokens (one-time per address)
-     * @dev Includes rate limiting and emergency mode checks
-     * @dev Supports custom amounts for future incentives
-     */
-    function claimAirdrop() external nonReentrant whenNotPaused {
-        require(!emergencyMode, "Contract in emergency mode");
-        require(!hasClaimed[msg.sender], "Already claimed");
-        require(totalRecipients < maxTotalClaims, "Max total claims reached");
-        
-        // Determine airdrop amount (custom or default)
-        uint256 claimAmount = customAirdropAmounts[msg.sender] > 0 
-            ? customAirdropAmounts[msg.sender] 
-            : airdropAmount;
-        
-        require(claimAmount > 0, "No airdrop amount available");
-        
-        // Rate limiting check
-        if (block.number == lastClaimBlock) {
-            require(currentBlockClaims < maxClaimsPerBlock, "Rate limit exceeded");
-            currentBlockClaims++;
-        } else {
-            lastClaimBlock = block.number;
-            currentBlockClaims = 1;
-        }
-        
-        // Check contract has enough tokens
-        uint256 contractBalance = shambaLuvToken.balanceOf(address(this));
-        require(contractBalance >= claimAmount, "Insufficient tokens in contract");
-        
-        // Mark as claimed
-        hasClaimed[msg.sender] = true;
-        totalClaimed += claimAmount;
-        totalRecipients++;
-        
-        // Clear custom amount if it was used
-        if (customAirdropAmounts[msg.sender] > 0) {
-            delete customAirdropAmounts[msg.sender];
-        }
-        
-        // Transfer tokens
-        require(shambaLuvToken.transfer(msg.sender, claimAmount), "Transfer failed");
-        
-        emit AirdropClaimed(msg.sender, claimAmount);
-    }
-    
-    /**
-     * @dev Check if an address has already claimed
-     */
-    function hasUserClaimed(address user) external view returns (bool) {
-        return hasClaimed[user];
-    }
-    
-    /**
-     * @dev Get airdrop stats
-     */
-    function getAirdropStats() external view returns (
-        uint256 _airdropAmount,
-        uint256 _totalClaimed,
-        uint256 _totalRecipients,
-        uint256 _contractBalance,
-        uint256 _contractETHBalance,
-        bool _emergencyMode,
-        uint256 _maxTotalClaims,
-        uint256 _remainingClaims
-    ) {
-        return (
-            airdropAmount,
-            totalClaimed,
-            totalRecipients,
-            shambaLuvToken.balanceOf(address(this)),
-            address(this).balance,
-            emergencyMode,
-            maxTotalClaims,
-            maxTotalClaims > totalRecipients ? maxTotalClaims - totalRecipients : 0
+    uint256 public claimCount;
+
+    // ───────── EIP-712 ─────────
+    bytes32 public immutable DOMAIN_SEPARATOR;
+    bytes32 private constant CLAIM_TYPEHASH =
+        keccak256("Claim(address recipient,uint256 amount,uint256 nonce,uint256 deadline)");
+
+    // ───────── events ─────────
+    event Claimed(address indexed recipient, uint256 amount, uint256 indexed nonce);
+    event SignerUpdated(address indexed prev, address indexed next);
+    event ClaimAmountUpdated(uint256 amount);
+    event Deposited(address indexed from, uint256 amount);
+    event Withdrawn(address indexed to, uint256 amount);
+    event PausedSet(bool paused);
+    event OwnershipTransferred(address indexed prev, address indexed next);
+
+    error NotOwner();
+    error Paused();
+    error Expired();
+    error NonceUsed();
+    error AlreadyClaimed();
+    error CapReached();
+    error BadSignature();
+    error ZeroAddress();
+    error TransferFailed();
+    error Reentrant();
+
+    uint256 private _lock = 1;
+    modifier onlyOwner() { if (msg.sender != owner) revert NotOwner(); _; }
+    modifier nonReentrant() { if (_lock == 2) revert Reentrant(); _lock = 2; _; _lock = 1; }
+
+    constructor(address token_, address signer_) {
+        if (token_ == address(0) || signer_ == address(0)) revert ZeroAddress();
+        token = token_;
+        signer = signer_;
+        owner = msg.sender;
+        DOMAIN_SEPARATOR = keccak256(
+            abi.encode(
+                keccak256("EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)"),
+                keccak256(bytes("ShambaLuvAirdrop")),
+                keccak256(bytes("1")),
+                block.chainid,
+                address(this)
+            )
         );
     }
-    
-    /**
-     * @dev Get rate limiting stats
-     */
-    function getRateLimitStats() external view returns (
-        uint256 _maxClaimsPerBlock,
-        uint256 _currentBlockClaims,
-        uint256 _lastClaimBlock,
-        bool _rateLimitActive
-    ) {
-        return (
-            maxClaimsPerBlock,
-            block.number == lastClaimBlock ? currentBlockClaims : 0,
-            lastClaimBlock,
-            block.number == lastClaimBlock && currentBlockClaims >= maxClaimsPerBlock
-        );
+
+    // ───────── the gesture: signature-gated claim ─────────
+    /// Redeem a backend-signed voucher. `amount` is signed (defaults to claimAmount off-chain),
+    /// `nonce` is unique per social identity, `deadline` bounds voucher lifetime.
+    function claim(address recipient, uint256 amount, uint256 nonce, uint256 deadline, bytes calldata signature)
+        external
+        nonReentrant
+    {
+        if (paused) revert Paused();
+        if (block.timestamp > deadline) revert Expired();
+        if (usedNonce[nonce]) revert NonceUsed();
+        if (hasClaimed[recipient]) revert AlreadyClaimed();
+        if (recipient == address(0)) revert ZeroAddress();
+        if (totalClaimed + amount > AIRDROP_CAP) revert CapReached(); // never exceed 1% of supply
+
+        bytes32 structHash = keccak256(abi.encode(CLAIM_TYPEHASH, recipient, amount, nonce, deadline));
+        bytes32 digest = keccak256(abi.encodePacked("\x19\x01", DOMAIN_SEPARATOR, structHash));
+        if (_recover(digest, signature) != signer) revert BadSignature();
+
+        usedNonce[nonce] = true;
+        hasClaimed[recipient] = true;
+        totalClaimed += amount;
+        claimCount += 1;
+
+        _safeTransfer(recipient, amount);
+        emit Claimed(recipient, amount, nonce);
     }
-    
-    /**
-     * @dev Owner can update airdrop amount
-     */
-    function setAirdropAmount(uint256 _newAmount) external onlyOwner {
-        require(_newAmount > 0, "Airdrop amount must be greater than 0");
-        uint256 oldAmount = airdropAmount;
-        airdropAmount = _newAmount;
-        emit AirdropAmountUpdated(oldAmount, _newAmount);
+
+    /// Off-chain helper: the exact digest the backend signs (so the server reproduces it 1:1).
+    function claimDigest(address recipient, uint256 amount, uint256 nonce, uint256 deadline)
+        external
+        view
+        returns (bytes32)
+    {
+        bytes32 structHash = keccak256(abi.encode(CLAIM_TYPEHASH, recipient, amount, nonce, deadline));
+        return keccak256(abi.encodePacked("\x19\x01", DOMAIN_SEPARATOR, structHash));
     }
-    
-    /**
-     * @dev Owner can set different airdrop amounts for specific addresses (future incentives)
-     * @param _recipients Array of addresses to set custom amounts for
-     * @param _amounts Array of custom amounts for each recipient
-     */
-    function setCustomAirdropAmounts(
-        address[] calldata _recipients,
-        uint256[] calldata _amounts
-    ) external onlyOwner {
-        require(_recipients.length == _amounts.length, "Arrays length mismatch");
-        require(_recipients.length > 0, "Empty arrays not allowed");
-        require(_recipients.length <= 100, "Max 100 recipients per batch");
-        
-        for (uint256 i = 0; i < _recipients.length; i++) {
-            require(_recipients[i] != address(0), "Invalid recipient address");
-            require(_amounts[i] > 0, "Amount must be greater than 0");
-            require(!hasClaimed[_recipients[i]], "Recipient already claimed");
-            
-            // Set custom amount for this recipient
-            customAirdropAmounts[_recipients[i]] = _amounts[i];
+
+    // ───────── owner ops ─────────
+    function setSigner(address s) external onlyOwner {
+        if (s == address(0)) revert ZeroAddress();
+        emit SignerUpdated(signer, s);
+        signer = s;
+    }
+
+    function setClaimAmount(uint256 a) external onlyOwner {
+        claimAmount = a;
+        emit ClaimAmountUpdated(a);
+    }
+
+    function setPaused(bool p) external onlyOwner {
+        paused = p;
+        emit PausedSet(p);
+    }
+
+    /// Fund the contract (owner pre-approves then deposits LUV to airdrop).
+    function deposit(uint256 amount) external onlyOwner {
+        if (!_pull(msg.sender, amount)) revert TransferFailed();
+        emit Deposited(msg.sender, amount);
+    }
+
+    /// Recover unused LUV (or wrong tokens) — owner custody of the float.
+    function withdraw(address to, uint256 amount) external onlyOwner {
+        if (to == address(0)) revert ZeroAddress();
+        _safeTransfer(to, amount);
+        emit Withdrawn(to, amount);
+    }
+
+    function renounceOwnership() external onlyOwner {
+        emit OwnershipTransferred(owner, address(0));
+        owner = address(0);
+    }
+
+    // ───────── views ─────────
+    function balance() external view returns (uint256) {
+        return IERC20Min(token).balanceOf(address(this));
+    }
+
+    function remainingClaims() external view returns (uint256) {
+        uint256 b = IERC20Min(token).balanceOf(address(this));
+        return claimAmount == 0 ? 0 : b / claimAmount;
+    }
+
+    // ───────── internals ─────────
+    function _safeTransfer(address to, uint256 amount) private {
+        (bool ok, bytes memory data) = token.call(abi.encodeWithSelector(IERC20Min.transfer.selector, to, amount));
+        if (!ok || (data.length != 0 && !abi.decode(data, (bool)))) revert TransferFailed();
+    }
+
+    function _pull(address from, uint256 amount) private returns (bool) {
+        (bool ok, bytes memory data) =
+            token.call(abi.encodeWithSelector(IERC20Min.transferFrom.selector, from, address(this), amount));
+        return ok && (data.length == 0 || abi.decode(data, (bool)));
+    }
+
+    function _recover(bytes32 digest, bytes calldata sig) private pure returns (address) {
+        if (sig.length != 65) revert BadSignature();
+        bytes32 r;
+        bytes32 s;
+        uint8 v;
+        assembly {
+            r := calldataload(sig.offset)
+            s := calldataload(add(sig.offset, 32))
+            v := byte(0, calldataload(add(sig.offset, 64)))
         }
-        
-        emit CustomAirdropAmountsSet(_recipients, _amounts);
+        if (uint256(s) > 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0) revert BadSignature();
+        if (v != 27 && v != 28) revert BadSignature();
+        address a = ecrecover(digest, v, r, s);
+        if (a == address(0)) revert BadSignature();
+        return a;
     }
-    
-    /**
-     * @dev Owner can remove custom airdrop amounts for specific addresses
-     * @param _recipients Array of addresses to remove custom amounts for
-     */
-    function removeCustomAirdropAmounts(address[] calldata _recipients) external onlyOwner {
-        require(_recipients.length > 0, "Empty array not allowed");
-        require(_recipients.length <= 100, "Max 100 recipients per batch");
-        
-        for (uint256 i = 0; i < _recipients.length; i++) {
-            delete customAirdropAmounts[_recipients[i]];
-        }
-        
-        emit CustomAirdropAmountsRemoved(_recipients);
-    }
-    
-    /**
-     * @dev Get custom airdrop amount for a specific address
-     * @param _recipient Address to check
-     * @return Custom amount if set, otherwise 0
-     */
-    function getCustomAirdropAmount(address _recipient) external view returns (uint256) {
-        return customAirdropAmounts[_recipient];
-    }
-    
-    /**
-     * @dev Check if an address has a custom airdrop amount
-     * @param _recipient Address to check
-     * @return True if custom amount is set
-     */
-    function hasCustomAirdropAmount(address _recipient) external view returns (bool) {
-        return customAirdropAmounts[_recipient] > 0;
-    }
-    
-    /**
-     * @dev Get available airdrop amount for a specific address
-     * @param _recipient Address to check
-     * @return Available amount (custom or default, 0 if already claimed)
-     */
-    function getAvailableAirdropAmount(address _recipient) external view returns (uint256) {
-        if (hasClaimed[_recipient]) {
-            return 0; // Already claimed
-        }
-        
-        if (customAirdropAmounts[_recipient] > 0) {
-            return customAirdropAmounts[_recipient];
-        }
-        
-        return airdropAmount;
-    }
-    
-    /**
-     * @dev Get airdrop info for a specific address
-     * @param _recipient Address to check
-     * @return claimed Whether the address has claimed
-     * @return availableAmount Available amount to claim
-     * @return isCustom Whether this is a custom amount
-     */
-    function getAirdropInfo(address _recipient) external view returns (
-        bool claimed,
-        uint256 availableAmount,
-        bool isCustom
-    ) {
-        claimed = hasClaimed[_recipient];
-        
-        if (claimed) {
-            availableAmount = 0;
-            isCustom = false;
-        } else {
-            if (customAirdropAmounts[_recipient] > 0) {
-                availableAmount = customAirdropAmounts[_recipient];
-                isCustom = true;
-            } else {
-                availableAmount = airdropAmount;
-                isCustom = false;
-            }
-        }
-    }
-    
-    /**
-     * @dev Owner can deposit tokens to the contract
-     */
-    function depositTokens(uint256 amount) external onlyOwner {
-        require(shambaLuvToken.transferFrom(msg.sender, address(this), amount), "Transfer failed");
-    }
-    
-    /**
-     * @dev Owner can withdraw remaining tokens
-     */
-    function withdrawTokens(uint256 amount) external onlyOwner {
-        uint256 contractBalance = shambaLuvToken.balanceOf(address(this));
-        require(amount <= contractBalance, "Insufficient balance");
-        
-        require(shambaLuvToken.transfer(msg.sender, amount), "Transfer failed");
-        emit TokensWithdrawn(msg.sender, amount);
-    }
-    
-    /**
-     * @dev Emergency withdraw all tokens
-     */
-    function emergencyWithdraw() external onlyOwner {
-        uint256 contractBalance = shambaLuvToken.balanceOf(address(this));
-        if (contractBalance > 0) {
-            require(shambaLuvToken.transfer(msg.sender, contractBalance), "Transfer failed");
-            emit TokensWithdrawn(msg.sender, contractBalance);
-        }
-    }
-    
-    /**
-     * @dev Withdraw ETH from contract
-     */
-    function withdrawETH(uint256 amount) external onlyOwner {
-        uint256 contractBalance = address(this).balance;
-        require(amount <= contractBalance, "Insufficient ETH balance");
-        
-        payable(msg.sender).sendValue(amount);
-        emit ETHWithdrawn(msg.sender, amount);
-    }
-    
-    /**
-     * @dev Emergency withdraw all ETH
-     */
-    function emergencyWithdrawETH() external onlyOwner {
-        uint256 contractBalance = address(this).balance;
-        if (contractBalance > 0) {
-            payable(msg.sender).sendValue(contractBalance);
-            emit ETHWithdrawn(msg.sender, contractBalance);
-        }
-    }
-    
-    /**
-     * @dev Withdraw any ERC20 token from contract
-     * @dev This function allows recovery of any ERC20 token sent to the contract
-     */
-    function withdrawERC20(address token, uint256 amount) external onlyOwner {
-        require(token != address(0), "Invalid token address");
-        require(token != address(shambaLuvToken), "Use withdrawTokens for SHAMBA LUV");
-        
-        IERC20 tokenContract = IERC20(token);
-        uint256 contractBalance = tokenContract.balanceOf(address(this));
-        require(amount <= contractBalance, "Insufficient token balance");
-        
-        require(tokenContract.transfer(msg.sender, amount), "Transfer failed");
-        emit ERC20Withdrawn(token, msg.sender, amount);
-    }
-    
-    /**
-     * @dev Emergency withdraw all of any ERC20 token
-     */
-    function emergencyWithdrawERC20(address token) external onlyOwner {
-        require(token != address(0), "Invalid token address");
-        require(token != address(shambaLuvToken), "Use emergencyWithdraw for SHAMBA LUV");
-        
-        IERC20 tokenContract = IERC20(token);
-        uint256 contractBalance = tokenContract.balanceOf(address(this));
-        
-        if (contractBalance > 0) {
-            require(tokenContract.transfer(msg.sender, contractBalance), "Transfer failed");
-            emit ERC20Withdrawn(token, msg.sender, contractBalance);
-        }
-    }
-    
-    /**
-     * @dev Send all tokens back to a specific address as a precaution
-     * @dev This function allows the owner to send all tokens (SHAMBA LUV, ETH, and other ERC20s) to a safe address
-     */
-    function sendAllTokensToAddress(address recipient) external onlyOwner {
-        require(recipient != address(0), "Invalid recipient address");
-        require(recipient != address(this), "Cannot send to self");
-        
-        // Send all SHAMBA LUV tokens
-        uint256 shambaLuvBalance = shambaLuvToken.balanceOf(address(this));
-        if (shambaLuvBalance > 0) {
-            require(shambaLuvToken.transfer(recipient, shambaLuvBalance), "SHAMBA LUV transfer failed");
-            emit TokensWithdrawn(recipient, shambaLuvBalance);
-        }
-        
-        // Send all ETH
-        uint256 ethBalance = address(this).balance;
-        if (ethBalance > 0) {
-            payable(recipient).sendValue(ethBalance);
-            emit ETHWithdrawn(recipient, ethBalance);
-        }
-        
-        // Note: For other ERC20 tokens, owner should use emergencyWithdrawERC20 for each token
-    }
-    
-    /**
-     * @dev Toggle emergency mode
-     */
-    function toggleEmergencyMode() external onlyOwner {
-        emergencyMode = !emergencyMode;
-        emit EmergencyModeToggled(emergencyMode);
-    }
-    
-    /**
-     * @dev Set maximum claims per block for rate limiting
-     */
-    function setMaxClaimsPerBlock(uint256 _maxClaims) external onlyOwner {
-        require(_maxClaims > 0, "Max claims must be positive");
-        uint256 oldMax = maxClaimsPerBlock;
-        maxClaimsPerBlock = _maxClaims;
-        emit MaxClaimsUpdated(oldMax, _maxClaims);
-    }
-    
-    /**
-     * @dev Set maximum total claims allowed
-     */
-    function setMaxTotalClaims(uint256 _maxTotal) external onlyOwner {
-        require(_maxTotal >= totalRecipients, "Cannot set below current recipients");
-        uint256 oldMax = maxTotalClaims;
-        maxTotalClaims = _maxTotal;
-        emit MaxTotalClaimsUpdated(oldMax, _maxTotal);
-    }
-    
-    /**
-     * @dev Reset rate limiting (useful for manual intervention)
-     */
-    function resetRateLimit() external onlyOwner {
-        currentBlockClaims = 0;
-        lastClaimBlock = 0;
-        emit RateLimitReset(block.number);
-    }
-    
-    /**
-     * @dev Pause the contract
-     */
-    function pause() external onlyOwner {
-        _pause();
-    }
-    
-    /**
-     * @dev Unpause the contract
-     */
-    function unpause() external onlyOwner {
-        _unpause();
-    }
-    
-    /**
-     * @dev Get contract balances for all assets
-     */
-    function getContractBalances() external view returns (
-        uint256 shambaLuvBalance,
-        uint256 ethBalance,
-        bool hasOtherTokens
-    ) {
-        shambaLuvBalance = shambaLuvToken.balanceOf(address(this));
-        ethBalance = address(this).balance;
-        
-        // Note: hasOtherTokens would require tracking or checking common tokens
-        // For simplicity, we'll return false here
-        hasOtherTokens = false;
-        
-        return (shambaLuvBalance, ethBalance, hasOtherTokens);
-    }
+}
+
+interface IERC20Min {
+    function transfer(address, uint256) external returns (bool);
+    function transferFrom(address, address, uint256) external returns (bool);
+    function balanceOf(address) external view returns (uint256);
 }
