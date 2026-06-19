@@ -249,6 +249,13 @@ contract ShambaLuv {
             _processFees();
         }
 
+        // FEE MODEL — rewards on BUY/SELL, 0 fee everywhere else:
+        //  • wallet-to-wallet (EOA↔EOA) is ALWAYS 0 fee (share the LUV freely);
+        //  • a fee is taken only when a NON-EXEMPT contract is the counterparty — in practice
+        //    the DEX pair, i.e. a buy (pair→you) or a sell (you→pair);
+        //  • infrastructure contracts that must move LUV fee-free — the liquidity wallet, and
+        //    any BRIDGE contract — are added to `isExcludedFromFee` (setFeeExemption), EXACTLY
+        //    like the liquidity wallet, so bridging and protocol plumbing incur no fee.
         bool walletToWallet = from.code.length == 0 && to.code.length == 0;
         bool takeFee = !(isExcludedFromFee[from] || isExcludedFromFee[to]
             || (walletToWalletFeeExempt && walletToWallet));

@@ -75,6 +75,35 @@ payout.
 `eligibleSupply` excludes reflection-excluded accounts (the contract itself, the liquidity
 wallet) so their share is never mis-credited.
 
+### Fee model — exactly where fees do and don't apply (and why bridging is free)
+
+**The 5% is a trading reward, not a transfer tax.** Concretely:
+
+| Transfer | Fee? | Why |
+| --- | --- | --- |
+| **Wallet → wallet (EOA ↔ EOA)** | **0 fee, always** | `walletToWallet` path — share the LUV freely, person to person |
+| **Buy** (DEX pair → you) | **5%** | the pair is a non-exempt contract counterparty |
+| **Sell** (you → DEX pair) | **5%** | same |
+| **You → any fee-exempt address** | **0 fee** | either side being on `isExcludedFromFee` skips the fee |
+| **You → a bridge / staking / infra contract that is fee-exempt** | **0 fee** | it's exempted exactly like the liquidity wallet |
+
+The decision is: `takeFee = !( isExcludedFromFee[from] || isExcludedFromFee[to] || (EOA↔EOA) )`.
+So a fee is taken only when a **non-exempt contract** is the counterparty — in practice the DEX
+pair, i.e. **a buy or a sell**. Holding, sending to friends, and protocol plumbing are free.
+
+**Bridging / cross-chain is fee-free** — the bridge contract is added to `isExcludedFromFee`
+(`setFeeExemption(bridge, true)`) **exactly the same way the liquidity wallet is exempted at
+construction**. Then locking/burning LUV into the bridge, and minting/releasing on the far side,
+incur **no fee**. (Earlier framing that the fee "complicates bridging" was wrong: it's the same
+one-line exemption as liquidity.) For a single unified price across chains, pair a burn-and-mint
+bridge — LayerZero **OFT v2** / Chainlink **CCIP** / Axelar **ITS** — with that exemption: supply
+stays unified, bridge moves are untaxed, and arbitrage converges the per-chain pool prices. The
+reward (the 5%) keeps firing where it should — on **buys and sells**, on each chain's pool.
+
+> Deployment checklist add: **fee-exempt every infra contract that must move LUV without a tax** —
+> the liquidity wallet (done in the constructor), the airdrop contract, and any bridge endpoint —
+> via `setFeeExemption(addr, true)`.
+
 ---
 
 ## 3. What was fixed (vs. the live Polygon contract)
