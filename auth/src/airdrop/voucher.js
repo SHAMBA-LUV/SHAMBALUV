@@ -6,7 +6,7 @@
  * The PRIMARY gesture is wallet-to-wallet and fee-free — see airdrop/gesture.js (treasury EOA →
  * user EOA, 0 fee, full trillion). This module is the alternative where the user (or a relayer)
  * submits an on-chain claim() against the signature-gated ShambaLuvAirdrop contract. NOTE: that
- * path is contract→EOA, so the LUV token TAXES it unless the airdrop contract is fee-exempt.
+ * path is contract→EOA, so the LUV token charges a fee on it unless the airdrop contract is fee-exempt.
  * Use it only if you want a trustless on-chain pull with the cap/one-claim enforced on-chain.
  *
  * Build + sign an EIP-712 Claim voucher and RELAY the on-chain claim() so the recipient holds

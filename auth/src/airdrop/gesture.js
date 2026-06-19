@@ -7,13 +7,13 @@
  * handshake simply sends the 1-trillion-LUV gesture as a DIRECT transfer from the relayer/
  * treasury wallet (an EOA holding the campaign pool) → the new signup's provisioned wallet (an
  * EOA). Both ends are wallets, so NO fee is taken and the recipient receives the FULL trillion —
- * with no fee-exemption and no contract distributor (a contract sender would be taxed).
+ * with no fee-exemption and no contract distributor (a contract sender would incur the fee).
  *
  * Sybil gate is the backend: one social identity = one wallet = one gesture (airdrop_claims
  * UNIQUE(identity_key)). The 1%-of-supply campaign cap (1 Quadrillion = 1000 trillion = 1000
  * gestures) is enforced by funding the treasury wallet with exactly that pool AND an off-chain
  * running total here. (The on-chain signature-gated ShambaLuvAirdrop in voucher.js remains as an
- * OPTIONAL self-serve PULL path; it is contract→EOA and therefore taxed unless that contract is
+ * OPTIONAL self-serve PULL path; it is contract→EOA and therefore fee-charged unless that contract is
  * fee-exempt — so the wallet-to-wallet push is the primary, fee-free path.)
  */
 

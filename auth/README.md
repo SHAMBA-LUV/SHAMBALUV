@@ -7,7 +7,7 @@
 > (`src/airdrop/gesture.js`). The relayer pays only the simple-transfer gas. **One social identity =
 > one wallet = one gesture.** (An optional on-chain self-serve *pull* path via the signature-gated
 > `ShambaLuvAirdrop` contract lives in `src/airdrop/voucher.js`, but that path is contract→EOA and is
-> taxed unless the contract is fee-exempt — so wallet-to-wallet is primary.)
+> fee-charged unless the contract is fee-exempt — so wallet-to-wallet is primary.)
 >
 > **Fully self-hosted** (Node + Express + PostgreSQL + ethers v6) — no paid third-party auth or
 > wallet service, **no monthly fee**. Wallet hosting is built to the **cypherpunk2048 standard**:

@@ -7,7 +7,7 @@
  *   - the WALLET-TO-WALLET gesture (treasury EOA → user EOA = 0 fee, full trillion) — the prod path
  *   - fee IS taken when a contract is the counterparty (proves why wallet-to-wallet is primary)
  *   - max-tx cap, unified processFees() (reflection batch; swap no-ops gracefully w/o a router)
- *   - the signature-gated airdrop: taxed without fee-exemption (~950B), exact 1T with exemption,
+ *   - the signature-gated airdrop: fee-charged without fee-exemption (~950B), exact 1T with exemption,
  *     replay/wrong-sig/cap reverts, and EIP-712 produced offline byte-matches the contract
  *
  *   anvil & node shambaluv/deploy/deploy-and-test-anvil.mjs
@@ -107,7 +107,7 @@ async function main() {
   console.log('\n3. fee taken on contract-counterparty transfer (why w2w is primary)');
   await (await luv.connect(deployer).transfer(A[5], 10n * TRILLION)).wait(); // fund trader (exempt sender)
   const dropBalBefore = await luv.balanceOf(dropAddr);
-  // trader (non-exempt EOA) → airdrop CONTRACT: taxed 5%
+  // trader (non-exempt EOA) → airdrop CONTRACT: charged the 5% fee
   await (await luv.connect(trader).transfer(dropAddr, TRILLION)).wait();
   const gained = (await luv.balanceOf(dropAddr)) - dropBalBefore;
   check('contract recipient got 95% (5% fee)', gained === (TRILLION * 95n) / 100n, gained.toString());
@@ -127,8 +127,8 @@ async function main() {
   check('reflections distributed (batch applied)', (await luv.totalReflectionsDistributed()) > reflBefore);
   check('pendingReflection reset to 0', (await luv.pendingReflection()) === 0n);
 
-  // ════════ 6. airdrop pull path — TAXED without fee-exemption (~950B) ════════
-  console.log('\n6. airdrop claim WITHOUT fee-exemption (contract→EOA, taxed)');
+  // ════════ 6. airdrop pull path — FEE-CHARGED without fee-exemption (~950B) ════════
+  console.log('\n6. airdrop claim WITHOUT fee-exemption (contract→EOA, fee charged)');
   await (await luv.connect(deployer).transfer(dropAddr, 10n * TRILLION)).wait(); // fund airdrop (exempt sender → full)
   const domain = { name: 'ShambaLuvAirdrop', version: '1', chainId, verifyingContract: dropAddr };
   const types = { Claim: [
@@ -144,9 +144,9 @@ async function main() {
     check(`EIP-712 digest matches contract (nonce ${nonce})`, onchain === offline);
     return sig;
   }
-  const rTax = fresh();
-  await (await drop.connect(deployer).claim(rTax, TRILLION, 1n, deadline, await voucher(rTax, TRILLION, 1n))).wait();
-  check('untaxed-exempt claim recipient got 95% (~950B)', (await luv.balanceOf(rTax)) === (TRILLION * 95n) / 100n);
+  const rFee = fresh();
+  await (await drop.connect(deployer).claim(rFee, TRILLION, 1n, deadline, await voucher(rFee, TRILLION, 1n))).wait();
+  check('non-exempt claim recipient got 95% (5% fee taken) (~950B)', (await luv.balanceOf(rFee)) === (TRILLION * 95n) / 100n);
 
   // ════════ 7. airdrop claim WITH fee-exemption — exact 1 trillion ════════
   console.log('\n7. airdrop claim WITH fee-exemption (exact full trillion)');

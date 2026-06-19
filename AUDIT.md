@@ -111,12 +111,12 @@ pluggable) → backend provisions a **cypherpunk2048-standard** wallet for that 
 
 **Why wallet-to-wallet:** the LUV token already makes EOA↔EOA transfers **0-fee**
 (`walletToWalletFeeExempt`). So the gesture is a direct EOA→EOA transfer — **full trillion arrives,
-no fee, no fee-exemption, no contract distributor** (a contract sender would be taxed; so MultiSend or
+no fee, no fee-exemption, no contract distributor** (a contract sender would incur the fee; so MultiSend or
 an on-chain `claim()` are *not* the primary path). The relayer pays only the simple-transfer gas.
 **One social identity = one wallet = one gesture**, enforced in Postgres (unique identity) + a treasury
 funded with exactly the **1%-of-supply cap (1 Quadrillion = 1000 trillion = 1000 gestures)** + an
 off-chain running total. `airdrop/gesture.js` is the primary path; `airdrop/voucher.js` +
-`ShambaLuvAirdrop.sol` remain an **optional on-chain self-serve PULL** (contract→EOA, taxed unless that
+`ShambaLuvAirdrop.sol` remain an **optional on-chain self-serve PULL** (contract→EOA, fee-charged unless that
 contract is fee-exempt) — EIP-712 byte-matches the contract (verified by `auth/test/voucher-selftest.mjs`).
 
 **Wallet hosting — cypherpunk2048 standard.** Sovereign + self-hosted + clean-room: every key lives

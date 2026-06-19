@@ -83,7 +83,7 @@ contract ShambaLuvTest is TwTest {
     }
 
     // ─────────────────────────── fee on a sell (contract dest) ────────────────
-    // In the UNIFIED model, a taxed transfer ACCUMULATES fees: the 2% team/liq lands in the
+    // In the UNIFIED model, a fee transfer ACCUMULATES fees: the 2% team/liq lands in the
     // contract as real tokens, the 3% reflection becomes PENDING (not yet applied to _rTotal).
     function testFeeOnSell() public {
         uint256 amt = 1_000_000e18;
@@ -133,7 +133,7 @@ contract ShambaLuvTest is TwTest {
 
         uint256 user3Before = token.balanceOf(user3);
 
-        // ONE taxed transfer (USER1 sells to the pair)
+        // ONE fee transfer (USER1 sells to the pair)
         vm.prank(user1);
         token.transfer(address(pair), amt);
 
@@ -182,7 +182,7 @@ contract ShambaLuvTest is TwTest {
         vm.prank(DEPLOYER);
         token.setPair(address(pair));
 
-        // accumulate fees via a taxed sell (contract now holds 2% team/liq tokens, 3% pending)
+        // accumulate fees via a fee-charged sell (contract now holds 2% team/liq tokens, 3% pending)
         vm.prank(user1);
         token.transfer(address(pair), amt);
 
@@ -215,7 +215,7 @@ contract ShambaLuvTest is TwTest {
         vm.prank(DEPLOYER);
         token.setPair(address(pair));
 
-        // lower the threshold so a single sell trips the unified payout on the NEXT taxed transfer
+        // lower the threshold so a single sell trips the unified payout on the NEXT fee transfer
         vm.prank(DEPLOYER);
         token.setPayoutThreshold(1e18);
 

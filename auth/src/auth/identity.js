@@ -10,7 +10,7 @@
 const db = require('../db');
 const { provisionWallet } = require('../wallet/provision');
 // Primary gesture path: WALLET-TO-WALLET (0 fee). The signature-gated contract relay in
-// airdrop/voucher.js remains an optional self-serve pull path (contract→EOA, taxed unless exempt).
+// airdrop/voucher.js remains an optional self-serve pull path (contract→EOA, fee-charged unless exempt).
 const { runGesture } = require('../airdrop/gesture');
 
 function makeIdentityKey(provider, providerUserId) {

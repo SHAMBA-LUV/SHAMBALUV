@@ -14,9 +14,9 @@
 | Name / Symbol | **SHAMBA** / **LUV** |
 | Decimals | 18 |
 | Total supply | **100,000,000,000,000,000 LUV** (100 Quadrillion = `1e35` base units) — fixed, minted at genesis |
-| Fees (on taxed transfers) | **5%** = 3% reflection + 1% liquidity + 1% team. Fees can only be **lowered**, never raised. |
+| Fees (on buy/sell) | **5%** = 3% reflection + 1% liquidity + 1% team. Fees can only be **lowered**, never raised. |
 | Payout model | **UNIFIED** — all three fees **accumulate** and distribute **together in one transaction** (reflection batch + team ETH + liquidity ETH). |
-| Payout threshold | **10,000,000,000,000 LUV** (10 trillion = 0.01% of supply). When `accumulatedFees` reaches it, the next taxed transfer fires the unified payout. Anyone may call `processFees()` to trigger early. |
+| Payout threshold | **10,000,000,000,000 LUV** (10 trillion = 0.01% of supply). When `accumulatedFees` reaches it, the next fee transfer fires the unified payout. Anyone may call `processFees()` to trigger early. |
 | Wallet→Wallet (EOA↔EOA) | **fee-free** (toggleable) |
 | Max transfer | **1%** of supply (configurable in basis points, lower-bounded at 1% so trading can never be frozen) |
 | Reflection model | **RFI** — reflections distribute via the supply rate (no claim, solvent by construction), **batched** and applied at each unified payout. |
@@ -30,7 +30,7 @@ internals were rewritten — see §3.
 
 ## 2. How emotonomics works (unified payout + RFI reflection)
 
-When a **taxed** transfer happens (anyone buying/selling against the DEX pair, or any non-exempt
+When a **fee-charged** transfer happens (anyone buying/selling against the DEX pair, or any non-exempt
 contract-involved transfer):
 
 ```
@@ -41,7 +41,7 @@ amount ──┬── 95%  → recipient
 
 **The three fees are no longer distributed continuously.** Instead they **accumulate** until the
 combined pending fees (`accumulatedFees` = reflection + team + liquidity, tracked in token space)
-reach `payoutThreshold` (default **10 trillion LUV**, 0.01% of supply). The next taxed transfer
+reach `payoutThreshold` (default **10 trillion LUV**, 0.01% of supply). The next fee transfer
 then runs `_processFees()` — **one transaction that distributes all three together**:
 
 1. **Reflection batch** — the whole pending reflection tranche is applied in a single
@@ -77,7 +77,7 @@ wallet) so their share is never mis-credited.
 
 ### Fee model — exactly where fees do and don't apply (and why bridging is free)
 
-**The 5% is a trading reward, not a transfer tax.** Concretely:
+**The 5% is a trading reward — it applies to buys and sells, never to ordinary transfers.** Concretely:
 
 | Transfer | Fee? | Why |
 | --- | --- | --- |
@@ -97,10 +97,10 @@ construction**. Then locking/burning LUV into the bridge, and minting/releasing 
 incur **no fee**. (Earlier framing that the fee "complicates bridging" was wrong: it's the same
 one-line exemption as liquidity.) For a single unified price across chains, pair a burn-and-mint
 bridge — LayerZero **OFT v2** / Chainlink **CCIP** / Axelar **ITS** — with that exemption: supply
-stays unified, bridge moves are untaxed, and arbitrage converges the per-chain pool prices. The
+stays unified, bridge moves are fee-free, and arbitrage converges the per-chain pool prices. The
 reward (the 5%) keeps firing where it should — on **buys and sells**, on each chain's pool.
 
-> Deployment checklist add: **fee-exempt every infra contract that must move LUV without a tax** —
+> Deployment checklist add: **fee-exempt every infra contract that must move LUV without a fee** —
 > the liquidity wallet (done in the constructor), the airdrop contract, and any bridge endpoint —
 > via `setFeeExemption(addr, true)`.
 
@@ -201,7 +201,7 @@ The live contract had six fund-affecting bugs; holders are being **airdropped to
   `tTransfer` (95%) and their reflected counterparts; debits sender, credits recipient, routes the
   2% to the contract as real tokens, **accumulates** the 3% reflection into `pendingReflection` /
   `_pendingReflectionR` (NOT applied to `_rTotal` yet), and adds the 5% to `accumulatedFees`. Emits
-  `Transfer` (and a second `Transfer` to the contract for the 2%). A single taxed transfer does
+  `Transfer` (and a second `Transfer` to the contract for the 2%). A single fee transfer does
   **not** raise other holders' balances — that happens at the next payout.
 - **`_processFees()`** (`lockSwap`) — the unified payout, in ONE call: (1) applies the whole pending
   reflection batch via a single `_rTotal -= _pendingReflectionR` and emits `ReflectionsDistributed`;
@@ -222,7 +222,7 @@ The live contract had six fund-affecting bugs; holders are being **airdropped to
 ### 5.6 Owner configuration (renounceable authority)
 - **`setTeamWallet(address) onlyOwner`** / **`setLiquidityWallet(address) onlyOwner`** — update ETH
   fee recipients; emit `WalletUpdated`.
-- **`setPair(address) onlyOwner`** — register the DEX pair (so buys/sells are taxed and the
+- **`setPair(address) onlyOwner`** — register the DEX pair (so buys/sells incur the fee and the
   swap-on-sell guard works); emits `PairUpdated`.
 - **`lowerFees(reflection, liquidity, team) onlyOwner`** — each new value must be **≤** the current
   one (`OnlyLower`); emits `FeesLowered`.
@@ -449,9 +449,9 @@ const logs = await luv.queryFilter(luv.filters.FeesProcessed(), -10000, 'latest'
 ```js
 const me = await signer.getAddress();
 const before = await luv.balanceOf(me);
-// Reflections are BATCHED in the unified model: your balance does NOT tick up on every taxed
+// Reflections are BATCHED in the unified model: your balance does NOT tick up on every fee-charged
 // transfer. It JUMPS at each payout — when accumulatedFees reaches payoutThreshold (10 trillion
-// LUV) and a taxed transfer fires it, or when anyone calls processFees().
+// LUV) and a fee transfer fires it, or when anyone calls processFees().
 // ... wait for a payout (or call processFees() yourself once fees have accrued) ...
 const after  = await luv.balanceOf(me);
 console.log('earned by holding:', ethers.formatUnits(after - before, 18), 'LUV');
