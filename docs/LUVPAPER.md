@@ -221,9 +221,10 @@ In this economy:
 
 **Links**  
 - Website: [luv.pythai.net](https://luv.pythai.net)  
-- Token Contract: [PolygonScan](https://polygonscan.com/token/0x1035760d0f60B35B63660ac0774ef363eAa5456e)  
-- Airdrop Contract: [PolygonScan](https://polygonscan.com/address/0x583F6D336E777c461FbfbeE3349D7D2dA9dc5e51#code)  
-- GitHub: [shamba-luv/shambaluv](https://github.com/shamba-luv/shambaluv)  
+- Token Contract (Ethereum-first, same address on every chain): [`0x9b46ad18eb135cA8E90895E97fD79F9f7526041B`](https://etherscan.io/address/0x9b46ad18eb135cA8E90895E97fD79F9f7526041B)  
+- The full contract ledger (token · launcher · wallets · luvbus · airdrop · distributor · locker): [luv.pythai.net — the ledger](https://luv.pythai.net/#ledger)  
+- Legacy Polygon original (superseded): [PolygonScan](https://polygonscan.com/token/0x1035760d0f60B35B63660ac0774ef363eAa5456e)  
+- GitHub: [SHAMBA-LUV/LUV — source & audit](https://github.com/SHAMBA-LUV/LUV) · [shamba-luv/shambaluv](https://github.com/shamba-luv/shambaluv)  
 
 ---
 
