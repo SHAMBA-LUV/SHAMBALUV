@@ -108,7 +108,8 @@ The supply is not hoarded — it is placed where the protocol's promises live, a
 
 **The treasury wallet** is deliberately *not* locked: it is the working capital of the protocol. Its
 defining public duty is the gesture campaign — every free 1-Trillion-LUV airdrop flows from the
-treasury wallet, wallet-to-wallet, fee-free, capped on-chain at 1% of supply.
+treasury wallet, wallet-to-wallet, fee-free, capped on-chain at the campaign pool of **1 Quadrillion
+LUV** (1,000 gestures), drawn from the treasury's 2.777-Quadrillion allocation.
 
 **The marketing and community allocations** follow the opposite rule: their principal sits locked in
 the LUVlocker behind an extend-only lock, while the 3% trade reflections keep accruing to it. The team
