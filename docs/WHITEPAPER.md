@@ -82,6 +82,7 @@ Data that accumulates significant LUV proves its social value and becomes a cand
 #### **SHAMBA LUV ($LUV) — The Currency of Gestures**
 -   **Total Supply:** 111,111,111,111,111,111.111111111111111111 LUV — 111 Quadrillion, a repunit of ones, fixed at genesis (Abundance)
 -   **Available Supply in Liquidity:** **100 Quadrillion LUV** — placed in the public liquidity pool, paired with ETH. The market's available supply is the pool's.
+-   **Team / Founder Startup Allocation:** the remaining **11.1 Quadrillion LUV** — the working allocation that funds the launch: the 1-Quadrillion gesture campaign, the locked marketing & community principal, the treasury working capital, and the founder wallet.
 -   **Purpose:** As the gesture token, LUV is designed for high-velocity circulation. It is used to measure social consensus, build reputation, and signal value. Its worth is in its use, not its price.
 -   **Tokenomics:** The 3/1/1 fee structure (Reflections/Liquidity/Marketing) is a **redistribution of emotional influence**, rewarding active participation and sustaining the network's cultural presence.
 
@@ -98,10 +99,10 @@ The supply is not hoarded — it is placed where the protocol's promises live, a
 | bucket | share | custody | role |
 | --- | --- | --- | --- |
 | **Liquidity Pool** | 100 Quadrillion (~90%) | DEX pool, paired with **ETH** | Permissionless market depth and the price anchor; every trade through it feeds reflections and auto-liquidity |
-| **Gesture Campaign** | 1 Quadrillion (1%) | allowance-capped from the treasury wallet | 1,000 free airdrops of 1 Trillion LUV — Phase 1's seed of the emotional economy |
-| **Marketing & Community** | allocation | **LOCKED in the LUVlocker** (extend-only) | Principal can never be unlocked early or sold — by anyone, team included |
-| **Treasury Wallet** | remainder | unlocked EOA | The protocol's **working capital** — it funds the free-gesture campaign; every 1T gesture is sent from it |
-| **Founder Wallet** | allocation | unlocked EOA | The founders provided the initial liquidity themselves |
+| **Gesture Campaign** | 1 Quadrillion (from the 11.1-quad startup allocation) | allowance-capped from the treasury wallet | 1,000 free airdrops of 1 Trillion LUV — Phase 1's seed of the emotional economy |
+| **Marketing & Community** | from the 11.1-quad startup allocation | **LOCKED in the LUVlocker** (extend-only) | Principal can never be unlocked early or sold — by anyone, team included |
+| **Treasury Wallet** | remainder of the 11.1-quad startup allocation | unlocked EOA | The protocol's **working capital** — it funds the free-gesture campaign; every 1T gesture is sent from it |
+| **Founder Wallet** | from the 11.1-quad startup allocation | unlocked EOA | The founders provided the initial liquidity themselves |
 
 **The treasury wallet** is deliberately *not* locked: it is the working capital of the protocol. Its
 defining public duty is the gesture campaign — every free 1-Trillion-LUV airdrop flows from the
