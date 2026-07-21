@@ -13,7 +13,8 @@
  *    • 100 Quadrillion — the liquidity pool, paired with ETH (the available supply)
  *    • 11.1 Quadrillion — team/founder startup allocation, split evenly four ways:
  *        · Founders   2.777 Quadrillion — liquid
- *        · Treasury   2.777 Quadrillion — liquid (funds the 1-Quadrillion gesture campaign)
+ *        · Treasury   2.777 Quadrillion — liquid (funds the gesture campaign:
+ *          a 1-Quadrillion pool = 1,000 free airdrops of 1 Trillion LUV each)
  *        · Marketing  2.777 Quadrillion — LOCKED in the LUVlocker
  *        · Community  2.778 Quadrillion — LOCKED — the split's indivisible rounding
  *          remainder is deliberately given to the community ❤ sharing is caring,
