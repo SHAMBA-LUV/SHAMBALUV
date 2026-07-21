@@ -5,8 +5,19 @@
 
 /*
  * ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️ SHAMBA LUV ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
- * 📊 TOTAL SUPPLY: 100000000000000000.000000000000000000 SHAMBA LUV
- *                        100 Quadrillion SHAMBA LUV
+ * 📊 TOTAL SUPPLY: 111111111111111111.111111111111111111 SHAMBA LUV
+ *                        111 Quadrillion SHAMBA LUV — a repunit of ones
+ *                        FIXED at genesis · minted once · no mint function
+ *
+ * 🏦 ALLOCATION (the entire economy, forever):
+ *    • 100 Quadrillion — the liquidity pool, paired with ETH (the available supply)
+ *    • 11.1 Quadrillion — team/founder startup allocation, split evenly four ways:
+ *        · Founders   2.777 Quadrillion — liquid
+ *        · Treasury   2.777 Quadrillion — liquid (funds the 1-Quadrillion gesture campaign)
+ *        · Marketing  2.777 Quadrillion — LOCKED in the LUVlocker
+ *        · Community  2.778 Quadrillion — LOCKED — the split's indivisible rounding
+ *          remainder is deliberately given to the community ❤ sharing is caring,
+ *          down to the last wei
  * 
  * 💰 FEE STRUCTURE (5% Total):
  *    • 3% Reflection Fee - hold ❤️ to 💰 ❤️ 
