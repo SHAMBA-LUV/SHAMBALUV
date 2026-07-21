@@ -83,6 +83,7 @@ Data that accumulates significant LUV proves its social value and becomes a cand
 -   **Total Supply:** 111,111,111,111,111,111.111111111111111111 LUV — 111 Quadrillion, a repunit of ones, fixed at genesis (Abundance)
 -   **Available Supply in Liquidity:** **100 Quadrillion LUV** — placed in the public liquidity pool, paired with ETH. The market's available supply is the pool's.
 -   **Team / Founder Startup Allocation:** the remaining **11.1 Quadrillion LUV** — the working allocation that funds the launch: the 1-Quadrillion gesture campaign, the locked marketing & community principal, the treasury working capital, and the founder wallet.
+-   **Supply is FIXED.** The full 111 Quadrillion is minted once at genesis and the contract has no mint function — nothing can ever be added. 100 Quadrillion in the pool + 11.1 Quadrillion startup allocation is the entire economy, forever.
 -   **Purpose:** As the gesture token, LUV is designed for high-velocity circulation. It is used to measure social consensus, build reputation, and signal value. Its worth is in its use, not its price.
 -   **Tokenomics:** The 3/1/1 fee structure (Reflections/Liquidity/Marketing) is a **redistribution of emotional influence**, rewarding active participation and sustaining the network's cultural presence.
 
