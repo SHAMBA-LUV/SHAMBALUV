@@ -80,7 +80,7 @@ Data that accumulates significant LUV proves its social value and becomes a cand
 ## **The Dual-Token Economy: Abundance & Scarcity in Harmony**
 
 #### **SHAMBA LUV ($LUV) — The Currency of Gestures**
--   **Total Supply:** 100 Quadrillion (Abundance)
+-   **Total Supply:** 111,111,111,111,111,111.111111111111111111 LUV — 111 Quadrillion, a repunit of ones, fixed at genesis (Abundance)
 -   **Purpose:** As the gesture token, LUV is designed for high-velocity circulation. It is used to measure social consensus, build reputation, and signal value. Its worth is in its use, not its price.
 -   **Tokenomics:** The 3/1/1 fee structure (Reflections/Liquidity/Marketing) is a **redistribution of emotional influence**, rewarding active participation and sustaining the network's cultural presence.
 
@@ -88,6 +88,36 @@ Data that accumulates significant LUV proves its social value and becomes a cand
 -   **Purpose:** This is a scarce asset used to capture real-world economic value. It is used to pay for the system's operational costs (storage, compute) and to distribute tangible profits back to participants.
 
 **The cycle is simple:** The flow of abundant **$LUV** identifies what is valuable. The payment of scarce **USDC/ETH** harvests and distributes that value.
+
+
+## **Treasury Architecture: How the LUV is Held**
+
+The supply is not hoarded — it is placed where the protocol's promises live, and every bucket is verifiable on-chain.
+
+| bucket | share | custody | role |
+| --- | --- | --- | --- |
+| **Liquidity Pool** | 100 Quadrillion (~90%) | DEX pool, paired with **ETH** | Permissionless market depth and the price anchor; every trade through it feeds reflections and auto-liquidity |
+| **Gesture Campaign** | 1 Quadrillion (1%) | allowance-capped from the treasury wallet | 1,000 free airdrops of 1 Trillion LUV — Phase 1's seed of the emotional economy |
+| **Marketing & Community** | allocation | **LOCKED in the LUVlocker** (extend-only) | Principal can never be unlocked early or sold — by anyone, team included |
+| **Treasury Wallet** | remainder | unlocked EOA | The protocol's **working capital** — it funds the free-gesture campaign; every 1T gesture is sent from it |
+| **Founder Wallet** | allocation | unlocked EOA | The founders provided the initial liquidity themselves |
+
+**The treasury wallet** is deliberately *not* locked: it is the working capital of the protocol. Its
+defining public duty is the gesture campaign — every free 1-Trillion-LUV airdrop flows from the
+treasury wallet, wallet-to-wallet, fee-free, capped on-chain at 1% of supply.
+
+**The marketing and community allocations** follow the opposite rule: their principal sits locked in
+the LUVlocker behind an extend-only lock, while the 3% trade reflections keep accruing to it. The team
+spends only that **reflections-interest** on marketing campaigns and community incentives — *spend the
+reflections, never the principal* — a self-refilling budget that grows with network activity instead
+of draining the supply.
+
+**The founder wallet** is unlocked. The founders, having provided the initial liquidity, are free to
+buy and sell as they see fit — and above and beyond their ROI, since they do not need the money, it is
+safe to assume they are holders. *Hold LUV, earn LUV applies to founders too.*
+
+None of this is a promise to trust — locked balances, unlock times, harvests, and every gesture from
+the treasury wallet are public on-chain records anyone can audit.
 
 ### Actualization: The TruthMarket Smart Contract
 
