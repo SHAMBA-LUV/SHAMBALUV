@@ -52,8 +52,17 @@ Value flows through three primary vectors:
 ## **Technical Overview**
 
 ### **Blockchain Infrastructure**
-- **Network**: Polygon  
+- **Network**: Ethereum-first, multichain-ready — the LUV contract lives at the **same
+  deterministic address on every chain** ([the ledger](https://luv.pythai.net/#ledger))  
 - **Token Standard**: ERC-20 (**LUV**)  
+- **Total Supply**: **111 Quadrillion** — the repunit of ones
+  (111,111,111,111,111,111.111111111111111111 LUV), **fixed at genesis**, no mint function  
+- **Circulating Supply**: **100 Quadrillion** — the public liquidity pool, **paired with ETH**  
+- **Startup Allocation**: the remaining **11.1 Quadrillion**, split evenly four ways —
+  **Founders 2.777Q** (liquid) · **Treasury 2.777Q** (liquid; funds the gesture campaign:
+  a 1-Quadrillion pool = 1,000 free airdrops of 1 Trillion) · **Marketing 2.777Q** (locked in
+  the LUVlocker) · **Community 2.778Q** (locked — the split's rounding remainder is
+  deliberately given to the community: sharing is caring, down to the last wei)  
 - **Transaction Fee Structure**:  
   - 3% Holder Reflections – Rewards for holding LUV.  
   - 1% Auto-Liquidity – Sustains market presence.  
