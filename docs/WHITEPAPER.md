@@ -189,3 +189,13 @@ We are building the universal gesture protocol for Web3 and beyond, creating a f
 Attention is Capital
 Gestures are Currency
 Impact is Profit
+
+---
+
+**Links**  
+- Website: [luv.pythai.net](https://luv.pythai.net)  
+- Token Contract (Ethereum-first, same address on every chain): [`0x9b46ad18eb135cA8E90895E97fD79F9f7526041B`](https://etherscan.io/address/0x9b46ad18eb135cA8E90895E97fD79F9f7526041B)  
+- The full contract ledger (token · launcher · wallets · luvbus · airdrop · distributor · locker): [luv.pythai.net — the ledger](https://luv.pythai.net/#ledger)  
+- FAQ: [luv.pythai.net/faq](https://luv.pythai.net/faq.html)  
+- GitHub: [SHAMBA-LUV/LUV — source & audit](https://github.com/SHAMBA-LUV/LUV) · [shamba-luv/shambaluv](https://github.com/shamba-luv/shambaluv)  
+
