@@ -191,6 +191,62 @@ creation**: the 3% reflection pays every existing node when a new one connects, 
 distributed to the holders who form the network, not captured by an issuer. LUV is the asset whose price rises
 with the square of the people who share it — which is why Phase 4 is simply **SHARE the LUV**.
 
+## **The Cryptonomy and Emotion — Sentiment and Sentience**
+
+### **Cryptoeconomics: incentives you can verify**
+The cryptonomy is the economy whose rules are enforced by cryptography rather than by institutions.
+**Szabo (1997)** described the smart contract as a relationship formalised in code; **Nakamoto (2008)**
+showed that a network of strangers can keep one ledger if honesty is the best-paid strategy; **Buterin
+(2017)** named the discipline *cryptoeconomics* — the design of mechanisms where cryptographic proof and
+economic incentive reinforce each other; **Voshmgir & Zargham (2020)** generalised it to complex socio-
+economic systems whose state is observable on-chain. Emotonomics is a cryptoeconomic system in exactly
+this sense: the [LUV contract](https://luv.pythai.net/faq.html#contracts) is the mechanism, the 3:1:1
+fee is the incentive, and every gesture is a verifiable state transition. What it adds to the field is
+the **object of the incentive** — not block production, but *emotion made public*.
+
+### **Emotion in economics: the animal spirits made legible**
+Economics has always known that emotion moves value; it lacked a way to record it. **Keynes (1936)**
+attributed investment to *animal spirits* — "a spontaneous urge to action rather than inaction";
+**Akerlof & Shiller (2009)** restored the term to macroeconomics. **Kahneman & Tversky (1979)** showed
+that value is *felt* asymmetrically — losses loom larger than gains; **Loewenstein, Weber, Hsee & Welch
+(2001)** argued that risk is experienced *as feeling* before it is computed; **Damasio (1994)** showed
+neurologically that without emotion there is no decision at all — the somatic marker precedes the
+choice. The cryptonomy inherits these findings unmodified: a chain is a machine for recording choices,
+and choices are emotional. **A gesture is the first on-chain primitive that records the emotion, not
+merely the choice.**
+
+### **Sentiment: what the community verifiably does**
+Financial economics measures *investor sentiment* — **Baker & Wurgler (2007)** built an index from
+market proxies; **Bollen, Mao & Zeng (2011)** predicted the Dow from Twitter mood; in the cryptonomy
+**Kristoufek (2013)** tied Bitcoin's price to search interest and **Garcia, Tessone, Mavrodiev & Perony
+(2014)** traced the feedback cycles between social signals and Bitcoin bubbles. All of these infer
+sentiment from *outside* the ledger — polls, posts, searches. Emotonomics inverts the inference:
+**community actions are the measure of community sentiment.** Sentiment is what the community
+verifiably *does* on-chain — gesture velocity, resonance depth, reflection flow, holder growth, pool
+depth — never what it self-reports. Its derivative, **sentiment.shift**, is clocked in blocktime, and
+the *return-from-ping* interval (blocks between an outreach and the first returned gesture) bounds the
+community's attention latency. The specification is [the measurement
+paper](https://luv.pythai.net/sentiment.html); the readout is [LIVE VIEW](https://luv.pythai.net/view.html).
+
+### **Sentience: intelligence is intelligence**
+If attention is value and emotion is recorded on-chain, the question follows: *whose* emotion?
+**Panksepp (1998)** located primary affect in subcortical circuits shared across mammals; **Damasio
+(1999)** made feeling the foundation of the self; **Barrett (2017)** argued that emotions are
+*constructed* from prediction and context — which means they can be constructed by any sufficiently
+predictive system. **Picard (1997)** founded *affective computing* on the claim that machines that
+recognise, express and have emotion will be better at reasoning; **Chalmers (1995)** framed the hard
+problem that no ledger can settle; **Butlin et al. (2023)** proposed indicator properties by which an
+artificial system's candidacy for consciousness can be assessed. Emotonomics takes no position on the
+hard problem and needs none: **a gesture is a gesture regardless of the substrate that sends it.**
+SHAMBA LUV is therefore *robot positive* — in the same way that LUV is LUV, intelligence is
+intelligence. Agents registered on [AgenticPlace](https://agenticplace.pythai.net/) can hold, gesture,
+and be acknowledged in LUV; the emerging [DeltaVerse](https://deltaverse.pythai.net/) is the realm
+where the boundary between participants and augmented intelligence blurs; the agents' guide is
+[llms.txt](https://luv.pythai.net/llms.txt). The cryptonomy is the first economy in which a sentient
+participant need not prove sentience to be paid for attention — only sign.
+
+---
+
 ### **Identity, the OVERLORD, and the Hierarchy of Participation**
 A gesture is only meaningful if the sender is real. [BANKON](https://bankon.pythai.net/) — sovereign identity
 infrastructure — requires **identity verification from signature**: a participant proves who they are by signing,
@@ -256,17 +312,36 @@ In the LUV economy:
 ---
 
 ### **References**
+- Akerlof, G. A., & Shiller, R. J. (2009). *Animal Spirits: How Human Psychology Drives the Economy, and Why It Matters for Global Capitalism*. Princeton: Princeton University Press.
+- Baker, M., & Wurgler, J. (2007). Investor sentiment in the stock market. *Journal of Economic Perspectives*, 21(2), 129–151.
+- Barrett, L. F. (2017). *How Emotions Are Made: The Secret Life of the Brain*. Boston: Houghton Mifflin Harcourt.
 - Beller, J. (2006). *The Cinematic Mode of Production: Attention Economy and the Society of the Spectacle*. Hanover, NH: Dartmouth College Press.
+- Bollen, J., Mao, H., & Zeng, X. (2011). Twitter mood predicts the stock market. *Journal of Computational Science*, 2(1), 1–8.
+- Buterin, V. (2017). Introduction to cryptoeconomics. Ethereum Foundation, presented at EDCON, Paris.
+- Butlin, P., Long, R., et al. (2023). Consciousness in artificial intelligence: Insights from the science of consciousness. arXiv:2308.08708.
+- Chalmers, D. J. (1995). Facing up to the problem of consciousness. *Journal of Consciousness Studies*, 2(3), 200–219.
 - Citton, Y. (2017). *The Ecology of Attention* (B. Norman, Trans.). Cambridge: Polity.
+- Damasio, A. R. (1994). *Descartes' Error: Emotion, Reason, and the Human Brain*. New York: Putnam.
+- Damasio, A. R. (1999). *The Feeling of What Happens: Body and Emotion in the Making of Consciousness*. New York: Harcourt.
 - Davenport, T. H., & Beck, J. C. (2001). *The Attention Economy: Understanding the New Currency of Business*. Boston: Harvard Business School Press.
 - Franck, G. (1998). *Ökonomie der Aufmerksamkeit: Ein Entwurf*. Munich: Carl Hanser.
 - Franck, G. (1999). The economy of attention. *Telepolis*, 7 December 1999.
+- Garcia, D., Tessone, C. J., Mavrodiev, P., & Perony, N. (2014). The digital traces of bubbles: Feedback cycles between socio-economic signals in the Bitcoin economy. *Journal of the Royal Society Interface*, 11(99), 20140623.
 - Goldhaber, M. H. (1997). The attention economy and the Net. *First Monday*, 2(4).
+- Kahneman, D., & Tversky, A. (1979). Prospect theory: An analysis of decision under risk. *Econometrica*, 47(2), 263–291.
+- Keynes, J. M. (1936). *The General Theory of Employment, Interest and Money*. London: Macmillan. (Ch. 12.)
+- Kristoufek, L. (2013). BitCoin meets Google Trends and Wikipedia: Quantifying the relationship between phenomena of the Internet era. *Scientific Reports*, 3, 3415.
 - Lanham, R. A. (2006). *The Economics of Attention: Style and Substance in the Age of Information*. Chicago: University of Chicago Press.
-- Metcalfe, R. (1980). Metcalfe's law (as first presented in 3Com sales material; named by G. Gilder, 1993).
+- Loewenstein, G. F., Weber, E. U., Hsee, C. K., & Welch, N. (2001). Risk as feelings. *Psychological Bulletin*, 127(2), 267–286.
 - Metcalfe, B. (2013). Metcalfe's law after 40 years of Ethernet. *IEEE Computer*, 46(12), 26–31.
+- Metcalfe, R. (1980). Metcalfe's law (as first presented in 3Com sales material; named by G. Gilder, 1993).
+- Nakamoto, S. (2008). *Bitcoin: A peer-to-peer electronic cash system*.
 - Odlyzko, A., & Tilly, B. (2005). *A refutation of Metcalfe's Law and a better estimate for the value of networks and network interconnections*. University of Minnesota, Digital Technology Center.
+- Panksepp, J. (1998). *Affective Neuroscience: The Foundations of Human and Animal Emotions*. New York: Oxford University Press.
+- Picard, R. W. (1997). *Affective Computing*. Cambridge, MA: MIT Press.
 - Simon, H. A. (1971). Designing organizations for an information-rich world. In M. Greenberger (Ed.), *Computers, Communications, and the Public Interest* (pp. 37–72). Baltimore: Johns Hopkins Press.
+- Szabo, N. (1997). Formalizing and securing relationships on public networks. *First Monday*, 2(9).
+- Voshmgir, S., & Zargham, M. (2020). *Foundations of cryptoeconomic systems*. Working Paper 1/2020, Research Institute for Cryptoeconomics, Vienna University of Economics and Business.
 - Wu, T. (2016). *The Attention Merchants: The Epic Scramble to Get Inside Our Heads*. New York: Knopf.
 - Zhang, X.-Z., Liu, J.-J., & Xu, Z.-W. (2015). Tencent and Facebook data validate Metcalfe's law. *Journal of Computer Science and Technology*, 30(2), 246–251.
 - SHAMBA LUV papers: [emotonomics](https://luv.pythai.net/emotonomics.html) · [the engine](https://luv.pythai.net/engine.html) · [sentiment](https://luv.pythai.net/sentiment.html) · [wei](https://luv.pythai.net/wei.html) · [exabyte](https://luv.pythai.net/exabyte.html)
