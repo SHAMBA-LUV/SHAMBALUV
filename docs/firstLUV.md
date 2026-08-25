@@ -1,7 +1,22 @@
 # **firstLUV — your first LUV, and the key that holds it**
 **For everyone who has just logged in at [luv.pythai.net](https://luv.pythai.net/)**
 
+**Live web publication:** https://luv.pythai.net/firstluv.html  
+
 **Home:** [luv.pythai.net](https://luv.pythai.net/) · [FAQ](https://luv.pythai.net/faq.html) · [the price of LUV](https://luv.pythai.net/view.html) · [EMOTONOMICS](EMOTONOMICS.md) · [the docs](https://luv.pythai.net/docs.html)
+
+---
+
+## **1 LUV is always == 1 LUV**
+
+Here is the thing most tokens can't say. **One LUV is exactly one LUV — always.** Send a friend 1 LUV and
+1 LUV arrives: no fee, no minimum, no rounding, no dust. LUV carries eighteen decimals of full precision and
+the contract never approximates. The *price* of LUV moves — the pair creates it, Uniswap expresses it, the
+oracle measures it — but the price is a description of LUV; it is not LUV. Your million LUV is a million LUV
+on the red day and a million LUV on the green day. That is what makes it a unit you can gesture with: the
+meaning of the gesture never changes size. The only fee anywhere is the market's 5% (3 : 1 : 1), and 3% of
+that comes back to you for holding. **Sharing IS the LUV** — every gesture is a bridge, and sharing never
+costs a fee on either side.
 
 ---
 
@@ -14,8 +29,10 @@ You signed in. In that moment three things became true:
 2. **Your first LUV was reserved** — recorded with your name on it, claimable whenever you like, gas on us.
    No rush; it never expires. ([the LUVdrip](https://luv.pythai.net/faq.html#luvdrip) keeps flowing after that.)
 3. **A private key exists that controls that wallet.** On the dashboard it is hidden behind
-   **🔒 press & hold to reveal**. It appears only while you hold the button and **is never stored** by
-   luv.pythai.net. Save it somewhere safe to take full custody — and read the rest of this page before you do.
+   **🔒 press & hold to reveal**. It appears only while you hold the button and is never kept in your
+   browser; until custody migrates fully to you, the owner key is held encrypted at rest in SHAMBA LUV's own
+   infrastructure ([FAQ — your wallet](https://luv.pythai.net/faq.html)). Save it somewhere safe to take full
+   custody — and read the rest of this page before you do.
 
 That key is the whole of your LUV. Whoever holds it, holds the LUV. This page is about holding it well.
 
