@@ -298,7 +298,9 @@ the risk that early holders carried is *lower for everyone who follows*; the 1% 
 only by 2-of-3 consensus in the DAIO — **consensus before custody.** The live readout is
 [LIVE VIEW](https://luv.pythai.net/view.html); the price both ways is
 [LUV.html](https://luv.pythai.net/LUV.html); the risk you are taking is stated in full in the
-[FAQ](https://luv.pythai.net/faq.html).
+[FAQ](https://luv.pythai.net/faq.html). If you have just logged in and hold your first LUV, the
+commitment this section describes has a practical form: **[firstLUV — your first LUV, and the key that
+holds it](firstLUV.md)** — keep the key private, or place it in a trust for release at a date you choose.
 
 ---
 
@@ -423,6 +425,7 @@ In the LUV economy:
 | price | [view.html](https://luv.pythai.net/view.html) · [LUV.html](https://luv.pythai.net/LUV.html) · [luvchart.html](https://luv.pythai.net/luvchart.html) · [luveth.html](https://luv.pythai.net/luveth.html) · [market.json](https://luv.pythai.net/market.json) |
 | papers | [emotonomics](https://luv.pythai.net/emotonomics.html) · [engine](https://luv.pythai.net/engine.html) · [sentiment](https://luv.pythai.net/sentiment.html) · [wei](https://luv.pythai.net/wei.html) · [exabyte](https://luv.pythai.net/exabyte.html) |
 | rails | [LUVbus](https://luv.pythai.net/luvbus.html) · [LIQ LOCKER](https://luv.pythai.net/liqlock.html) · [the rainbow](https://luv.pythai.net/rainbow.html) |
+| first LUV | [firstLUV.md](firstLUV.md) — your first LUV, and the key that holds it |
 | docs | [docs.html](https://luv.pythai.net/docs.html) · [the LUV story](https://luv.pythai.net/luvstory.html) · [llms.txt](https://luv.pythai.net/llms.txt) |
 | identity | [BANKON](https://bankon.pythai.net/) — sovereign identity, verified by signature |
 | agents | [AgenticPlace](https://agenticplace.pythai.net/) — the ERC-8004 agent registry |
