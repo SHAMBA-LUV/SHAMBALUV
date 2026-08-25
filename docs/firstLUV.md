@@ -59,6 +59,11 @@ in advance**. It can be as formal or as simple as you like:
 | **a legal trust or will** | The key (or its location) placed in an estate instrument with a release condition — a date, an age, an event. This is how LUV outlives you and reaches the people you meant it for. |
 | **split custody** | Split the key into shares (Shamir's secret sharing) held by several trustees, each with the same release date. No single person — including you — can reconstruct it early. |
 | **the LUVlocker (on-chain)** | The extend-only vault: lock the principal for a term, keep earning reflections the whole time. Use it when the [FAQ](https://luv.pythai.net/faq.html) links a *live* lock — earmarked is not locked, and a lock is a transaction anyone can verify. |
+| **locker as a service** *(coming)* | SHAMBA LUV will offer the locker **as a service** — the trust above, done for you on-chain from your dashboard: choose the term, lock the principal, keep the reflections — **once proof of redemption and collect are finalized.** The redeem and collect rails are the same rails the lock will ride; they ship first. Until the FAQ links it live, it is a promise, not a product. |
+
+**Proof of redemption** is the rail that makes the service possible: every LUVdrop accrues gas-free, and you
+redeem the pile in one on-chain transaction of your own choosing — the same participant-timed, verifiable
+act that a lock's maturity will be. When redeem and collect are finalized, *lock* becomes the third button.
 
 Choose the date honestly. A year is a real commitment. Five years is a statement. The point is not the
 instrument — it is that **the release date is chosen now, calmly, and cannot be moved by the person you will
@@ -106,6 +111,7 @@ and [how many times it has X'd](https://luv.pythai.net/view.html) — then decid
 3. ☐ Press & hold, **write the private key down offline**, two copies. Verify both.
 4. ☐ Decide the **release date**. Write it on the envelope.
 5. ☐ Choose the trust form from the table above. Seal it. Hand it over. Tell the trustee what it is and what it isn't.
+   *(or wait for locker-as-a-service and let the chain be the trustee)*
 6. ☐ Keep the **public address** somewhere you *can* reach — that is what people send LUV to, and what you watch grow.
 7. ☐ Share the LUV: sharing IS the marketing — thanks a million millions.
 
