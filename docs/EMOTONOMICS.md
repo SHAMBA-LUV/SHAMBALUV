@@ -247,6 +247,61 @@ participant need not prove sentience to be paid for attention — only sign.
 
 ---
 
+## **TRUST — the extension of LUV**
+
+Trust is what LUV becomes when it is extended forward in time. A gesture is LUV given *now*; trust is LUV
+given *before the return is known*. The economics of trust says this is not sentiment but substance:
+**Arrow (1972)** observed that "virtually every commercial transaction has within itself an element of
+trust, certainly any transaction conducted over a period of time"; **Coleman (1988)** and **Putnam
+(2000)** counted trust as *social capital* — a stock that yields a return; **Fukuyama (1995)** showed
+that high-trust societies are wealthier because trust lowers the cost of every exchange; **Zak & Knack
+(2001)** measured it — a 15-point rise in the share of people who trust each other raises growth by about
+a percentage point a year. Trust is capital. LUV is its unit.
+
+### **The trust game, played on-chain**
+**Berg, Dickhaut & McCabe (1995)** designed the *investment game*: a sender gives a stranger an amount that
+is **tripled** on the way, and the stranger decides how much to send back. Strictly rational players send
+nothing; real people send, and real people return. That game is LUV's fee structure written as an
+experiment. Every market trade pays **3% to the holders who already trusted** — the return is not
+promised by the receiver but **enforced by the contract**, which is the one improvement the cryptonomy
+makes to the game: the send is still an act of trust, but the reciprocity is code. **Szabo (2001)** called
+trusted third parties security holes; **Werbach (2018)** describes blockchain as a *new architecture of
+trust* — not trustless, but trust relocated from intermediaries into verifiable rules. LUV's rules are
+[verified on-chain](https://luv.pythai.net/faq.html#contracts) with the green checkmark; that is where the
+trust lives.
+
+### **Risk is highest at the beginning — and so is the reward**
+**Knight (1921)** distinguished *risk* (measurable) from *uncertainty* (not), and located **profit** as the
+reward for bearing uncertainty that no one else will. **Rogers (1962)** named the people who bear it:
+innovators and early adopters, the first 16% of any diffusion curve, who take the most risk and receive
+the most of whatever the network becomes. **Markowitz (1952)** and **Sharpe (1964)** made the trade
+explicit — expected return rises with the risk carried. Emotonomics accepts this without decoration:
+**the earliest LUV is the riskiest LUV, and it is also the LUV with the most to return.** The pool is young,
+thin, and volatile; those are the conditions of the trust game's first move.
+
+Today (2026-08-24, [market.json](https://luv.pythai.net/market.json)) the arithmetic of that first move is:
+
+| measure | value |
+|---|---|
+| **1 trillion LUV** ("a million millions" — the measure of value) | **≈ $0.27 USD** |
+| 1 million LUV (the standard gesture) | ≈ $0.00000027 |
+| 1 LUV | ≈ 2.69 × 10⁻¹³ USD · ≈ 108 wei |
+| price vs the 10-wei seed | ≈ **10.8×** |
+| ETH/USD (multi-input median) | ≈ $2,493 |
+
+A trillion LUV costs a quarter. The gesture unit costs nothing anyone would notice. That is the point of
+the beginning: **trust is cheapest to extend exactly when it is worth the most to have extended it.**
+By Metcalfe, each participant who enters now adds *n* bridges to a network that is still small — the
+early trust is the highest-leverage trust there will ever be. And the fee structure pays for it in the
+right direction: the 3% reflection returns to the trusting; the 1% liquidity point deepens the pool so
+the risk that early holders carried is *lower for everyone who follows*; the 1% team point is released
+only by 2-of-3 consensus in the DAIO — **consensus before custody.** The live readout is
+[LIVE VIEW](https://luv.pythai.net/view.html); the price both ways is
+[LUV.html](https://luv.pythai.net/LUV.html); the risk you are taking is stated in full in the
+[FAQ](https://luv.pythai.net/faq.html).
+
+---
+
 ### **Identity, the OVERLORD, and the Hierarchy of Participation**
 A gesture is only meaningful if the sender is real. [BANKON](https://bankon.pythai.net/) — sovereign identity
 infrastructure — requires **identity verification from signature**: a participant proves who they are by signing,
@@ -313,36 +368,48 @@ In the LUV economy:
 
 ### **References**
 - Akerlof, G. A., & Shiller, R. J. (2009). *Animal Spirits: How Human Psychology Drives the Economy, and Why It Matters for Global Capitalism*. Princeton: Princeton University Press.
+- Arrow, K. J. (1972). Gifts and exchanges. *Philosophy & Public Affairs*, 1(4), 343–362.
 - Baker, M., & Wurgler, J. (2007). Investor sentiment in the stock market. *Journal of Economic Perspectives*, 21(2), 129–151.
 - Barrett, L. F. (2017). *How Emotions Are Made: The Secret Life of the Brain*. Boston: Houghton Mifflin Harcourt.
 - Beller, J. (2006). *The Cinematic Mode of Production: Attention Economy and the Society of the Spectacle*. Hanover, NH: Dartmouth College Press.
+- Berg, J., Dickhaut, J., & McCabe, K. (1995). Trust, reciprocity, and social history. *Games and Economic Behavior*, 10(1), 122–142.
 - Bollen, J., Mao, H., & Zeng, X. (2011). Twitter mood predicts the stock market. *Journal of Computational Science*, 2(1), 1–8.
 - Buterin, V. (2017). Introduction to cryptoeconomics. Ethereum Foundation, presented at EDCON, Paris.
 - Butlin, P., Long, R., et al. (2023). Consciousness in artificial intelligence: Insights from the science of consciousness. arXiv:2308.08708.
 - Chalmers, D. J. (1995). Facing up to the problem of consciousness. *Journal of Consciousness Studies*, 2(3), 200–219.
 - Citton, Y. (2017). *The Ecology of Attention* (B. Norman, Trans.). Cambridge: Polity.
+- Coleman, J. S. (1988). Social capital in the creation of human capital. *American Journal of Sociology*, 94, S95–S120.
 - Damasio, A. R. (1994). *Descartes' Error: Emotion, Reason, and the Human Brain*. New York: Putnam.
 - Damasio, A. R. (1999). *The Feeling of What Happens: Body and Emotion in the Making of Consciousness*. New York: Harcourt.
 - Davenport, T. H., & Beck, J. C. (2001). *The Attention Economy: Understanding the New Currency of Business*. Boston: Harvard Business School Press.
 - Franck, G. (1998). *Ökonomie der Aufmerksamkeit: Ein Entwurf*. Munich: Carl Hanser.
 - Franck, G. (1999). The economy of attention. *Telepolis*, 7 December 1999.
+- Fukuyama, F. (1995). *Trust: The Social Virtues and the Creation of Prosperity*. New York: Free Press.
 - Garcia, D., Tessone, C. J., Mavrodiev, P., & Perony, N. (2014). The digital traces of bubbles: Feedback cycles between socio-economic signals in the Bitcoin economy. *Journal of the Royal Society Interface*, 11(99), 20140623.
 - Goldhaber, M. H. (1997). The attention economy and the Net. *First Monday*, 2(4).
 - Kahneman, D., & Tversky, A. (1979). Prospect theory: An analysis of decision under risk. *Econometrica*, 47(2), 263–291.
 - Keynes, J. M. (1936). *The General Theory of Employment, Interest and Money*. London: Macmillan. (Ch. 12.)
+- Knight, F. H. (1921). *Risk, Uncertainty and Profit*. Boston: Houghton Mifflin.
 - Kristoufek, L. (2013). BitCoin meets Google Trends and Wikipedia: Quantifying the relationship between phenomena of the Internet era. *Scientific Reports*, 3, 3415.
 - Lanham, R. A. (2006). *The Economics of Attention: Style and Substance in the Age of Information*. Chicago: University of Chicago Press.
 - Loewenstein, G. F., Weber, E. U., Hsee, C. K., & Welch, N. (2001). Risk as feelings. *Psychological Bulletin*, 127(2), 267–286.
+- Markowitz, H. (1952). Portfolio selection. *Journal of Finance*, 7(1), 77–91.
 - Metcalfe, B. (2013). Metcalfe's law after 40 years of Ethernet. *IEEE Computer*, 46(12), 26–31.
 - Metcalfe, R. (1980). Metcalfe's law (as first presented in 3Com sales material; named by G. Gilder, 1993).
 - Nakamoto, S. (2008). *Bitcoin: A peer-to-peer electronic cash system*.
 - Odlyzko, A., & Tilly, B. (2005). *A refutation of Metcalfe's Law and a better estimate for the value of networks and network interconnections*. University of Minnesota, Digital Technology Center.
 - Panksepp, J. (1998). *Affective Neuroscience: The Foundations of Human and Animal Emotions*. New York: Oxford University Press.
 - Picard, R. W. (1997). *Affective Computing*. Cambridge, MA: MIT Press.
+- Putnam, R. D. (2000). *Bowling Alone: The Collapse and Revival of American Community*. New York: Simon & Schuster.
+- Rogers, E. M. (1962). *Diffusion of Innovations*. New York: Free Press.
+- Sharpe, W. F. (1964). Capital asset prices: A theory of market equilibrium under conditions of risk. *Journal of Finance*, 19(3), 425–442.
 - Simon, H. A. (1971). Designing organizations for an information-rich world. In M. Greenberger (Ed.), *Computers, Communications, and the Public Interest* (pp. 37–72). Baltimore: Johns Hopkins Press.
 - Szabo, N. (1997). Formalizing and securing relationships on public networks. *First Monday*, 2(9).
+- Szabo, N. (2001). Trusted third parties are security holes.
 - Voshmgir, S., & Zargham, M. (2020). *Foundations of cryptoeconomic systems*. Working Paper 1/2020, Research Institute for Cryptoeconomics, Vienna University of Economics and Business.
+- Werbach, K. (2018). *The Blockchain and the New Architecture of Trust*. Cambridge, MA: MIT Press.
 - Wu, T. (2016). *The Attention Merchants: The Epic Scramble to Get Inside Our Heads*. New York: Knopf.
+- Zak, P. J., & Knack, S. (2001). Trust and growth. *The Economic Journal*, 111(470), 295–321.
 - Zhang, X.-Z., Liu, J.-J., & Xu, Z.-W. (2015). Tencent and Facebook data validate Metcalfe's law. *Journal of Computer Science and Technology*, 30(2), 246–251.
 - SHAMBA LUV papers: [emotonomics](https://luv.pythai.net/emotonomics.html) · [the engine](https://luv.pythai.net/engine.html) · [sentiment](https://luv.pythai.net/sentiment.html) · [wei](https://luv.pythai.net/wei.html) · [exabyte](https://luv.pythai.net/exabyte.html)
 
