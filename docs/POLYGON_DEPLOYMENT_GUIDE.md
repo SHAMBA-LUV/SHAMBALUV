@@ -9,4 +9,5 @@ longer maintained and must not be used to deploy anything.
 - **The pioneers' LUVdrop will be honoured — 1 LUV == 1 LUV.** Every holder on the abandoned Polygon test
   contract receives their balance on the live Ethereum contract, one LUV for one LUV. That commitment stands; the snapshot is being reconstructed and will be published with its block height and a
   hash of the holder list — [FAQ — honouring the Polygon contract](https://luv.pythai.net/faq.html#polygon)
+- The Polygon `MultiSend` test was the **first use of multi-send** — it became [LUVbus](https://luv.pythai.net/luvbus.html), the live Ethereum batch rail.
 - Current documentation: [EMOTONOMICS](EMOTONOMICS.md) · [firstLUV](firstLUV.md) · [the docs atlas](https://luv.pythai.net/docs.html)

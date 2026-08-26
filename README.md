@@ -28,6 +28,8 @@ SHAMBA LUV is a digital gesture designed to spread abundance, fun, joy and LUV a
 > [defunct](docs/POLYGON_DEPLOYMENT_GUIDE.md) and archived privately. **The pioneers who held LUV on
 > Polygon are honoured — the pioneers' LUVdrop, 1 LUV == 1 LUV** on the live Ethereum contract:
 > see [the FAQ](https://luv.pythai.net/faq.html#polygon).
+> The Polygon `MultiSend` contract was the **first multi-send test** — it became [LUVbus](https://luv.pythai.net/luvbus.html),
+> the Ethereum batch rail (every seat receives, one transaction drives).
 
 ---
 
