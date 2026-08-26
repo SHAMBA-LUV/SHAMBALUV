@@ -1,3 +1,7 @@
+> ⚠️ **POLYGON TEST ERA — ABANDONED.** This review describes the Polygon-era test configuration of `LUV.sol` (QuickSwap router, WPOL). This is **not** the live contract. LUV is **LIVE on Ethereum**
+> at the verified address [`0x2711111111683B8708cb9a48cBf36a51315F8254`](https://etherscan.io/address/0x2711111111683B8708cb9a48cBf36a51315F8254#code)
+> — source [`contracts/ShambaLuv.sol`](contracts/ShambaLuv.sol), current guide [`LUV.md`](LUV.md), live site https://luv.pythai.net. Kept for history only.
+
 # 🔍 **SHAMBA LUV Contract - Production Readiness Review**
 
 ## 📋 **Executive Summary**
