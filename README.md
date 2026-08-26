@@ -25,7 +25,8 @@ SHAMBA LUV is a digital gesture designed to spread abundance, fun, joy and LUV a
 > (`0x1035760d0f60B35B63660ac0774ef363eAa5456e`, with its test airdrop and MultiSend contracts) was a
 > **test**. It is not the live token, it is not maintained, and nothing should be deployed from that
 > template. LUV moved to **Ethereum** at the verified address above. The Polygon-era deployment guide is
-> [defunct](docs/POLYGON_DEPLOYMENT_GUIDE.md) and archived privately. Polygon-contract holders:
+> [defunct](docs/POLYGON_DEPLOYMENT_GUIDE.md) and archived privately. **The pioneers who held LUV on
+> Polygon are honoured — the pioneers' LUVdrop, 1 LUV == 1 LUV** on the live Ethereum contract:
 > see [the FAQ](https://luv.pythai.net/faq.html#polygon).
 
 ---
