@@ -1,0 +1,610 @@
+{
+ "polygon": {
+  "token": "0x1035760d0f60b35b63660ac0774ef363eaa5456e",
+  "chainId": 137,
+  "block": 96988358,
+  "timestamp": "2026-11-09T01:33:13.000Z",
+  "rpc": "polygon-bor-rpc.publicnode.com",
+  "totalSupply_wei": "100000000000000000000000000000000000"
+ },
+ "ethereum": {
+  "token": "0x2711111111683B8708cb9a48cBf36a51315F8254",
+  "chainId": 1,
+  "block": 26374073,
+  "rpc": "ethereum-rpc.publicnode.com"
+ },
+ "supplyCheck": {
+  "heldByListed_wei": "93540724217567216000000000000000000",
+  "unaccounted_wei": "6459275782432784000000000000000000"
+ },
+ "counts": {
+  "seats": 54,
+  "verified": 0,
+  "warn": 54,
+  "fail": 0,
+  "cohort": 41
+ },
+ "seats": [
+  {
+   "polygon": "0x9e5e48aae6d86c049053eeed0a125c0f3635693f",
+   "kind": "eoa",
+   "amount_wei": "76000000000000000000000000000000000",
+   "inCohort": false,
+   "deliverTo": "0x9e5e48aae6d86c049053eeed0a125c0f3635693f",
+   "augAmount_wei": null,
+   "status": "warn",
+   "note": "above the 1T LUV cohort ceiling: not in the drop by the cohort doctrine (decision needed)"
+  },
+  {
+   "polygon": "0x2000005b9a3766609ed0f5c1c14ffe7b7b3d80d4",
+   "kind": "eoa",
+   "amount_wei": "3000000000000000000000000000000000",
+   "inCohort": false,
+   "deliverTo": "0x2000005b9a3766609ed0f5c1c14ffe7b7b3d80d4",
+   "augAmount_wei": null,
+   "status": "warn",
+   "note": "above the 1T LUV cohort ceiling: not in the drop by the cohort doctrine (decision needed)"
+  },
+  {
+   "polygon": "0x7777701a3f4e7bb15e8dd7cbf9f2be1a58b1592c",
+   "kind": "eoa",
+   "amount_wei": "3000000000000000000000000000000000",
+   "inCohort": false,
+   "deliverTo": "0x7777701a3f4e7bb15e8dd7cbf9f2be1a58b1592c",
+   "augAmount_wei": null,
+   "status": "warn",
+   "note": "above the 1T LUV cohort ceiling: not in the drop by the cohort doctrine (decision needed)"
+  },
+  {
+   "polygon": "0xf41258a7ae0d123b803bc90eb33449824a700000",
+   "kind": "eoa",
+   "amount_wei": "3000000000000000000000000000000000",
+   "inCohort": false,
+   "deliverTo": "0xf41258a7ae0d123b803bc90eb33449824a700000",
+   "augAmount_wei": null,
+   "status": "warn",
+   "note": "above the 1T LUV cohort ceiling: not in the drop by the cohort doctrine (decision needed)"
+  },
+  {
+   "polygon": "0x4f87fed88d1d48da0434db3e533722fed988888d",
+   "kind": "eoa",
+   "amount_wei": "2147949999999900000000000000000000",
+   "inCohort": false,
+   "deliverTo": "0x4f87fed88d1d48da0434db3e533722fed988888d",
+   "augAmount_wei": null,
+   "status": "warn",
+   "note": "above the 1T LUV cohort ceiling: not in the drop by the cohort doctrine (decision needed)"
+  },
+  {
+   "polygon": "0x33336913a6f376ba532ed85c133b7210d7ab5f1b",
+   "kind": "eoa",
+   "amount_wei": "1989000000000000000000000000000000",
+   "inCohort": false,
+   "deliverTo": "0x33336913a6f376ba532ed85c133b7210d7ab5f1b",
+   "augAmount_wei": null,
+   "status": "warn",
+   "note": "above the 1T LUV cohort ceiling: not in the drop by the cohort doctrine (decision needed)"
+  },
+  {
+   "polygon": "0x900b85d9f19759907c3c2ed16cbf8402bfb33333",
+   "kind": "eoa",
+   "amount_wei": "1355843626584975000000000000000000",
+   "inCohort": false,
+   "deliverTo": "0x900b85d9f19759907c3c2ed16cbf8402bfb33333",
+   "augAmount_wei": null,
+   "status": "warn",
+   "note": "above the 1T LUV cohort ceiling: not in the drop by the cohort doctrine (decision needed)"
+  },
+  {
+   "polygon": "0xad5e65bc04a63c846b51e946b5c775b015595985",
+   "kind": "eoa",
+   "amount_wei": "1000000000000000000000000000000000",
+   "inCohort": false,
+   "deliverTo": "0xad5e65bc04a63c846b51e946b5c775b015595985",
+   "augAmount_wei": null,
+   "status": "warn",
+   "note": "above the 1T LUV cohort ceiling: not in the drop by the cohort doctrine (decision needed)"
+  },
+  {
+   "polygon": "0x583f6d336e777c461fbfbee3349d7d2da9dc5e51",
+   "kind": "contract",
+   "amount_wei": "799000000000000000000000000000000",
+   "inCohort": false,
+   "deliverTo": null,
+   "augAmount_wei": null,
+   "status": "warn",
+   "note": "above the 1T LUV cohort ceiling: not in the drop by the cohort doctrine (decision needed)"
+  },
+  {
+   "polygon": "0x4891a01b6d052dcaee9c04b8eb18741298e2b171",
+   "kind": "eoa",
+   "amount_wei": "670435865347776000000000000000000",
+   "inCohort": false,
+   "deliverTo": "0x4891a01b6d052dcaee9c04b8eb18741298e2b171",
+   "augAmount_wei": null,
+   "status": "warn",
+   "note": "above the 1T LUV cohort ceiling: not in the drop by the cohort doctrine (decision needed)"
+  },
+  {
+   "polygon": "0xb1da3900d385c22b15407080b9e05a13b92d09b0",
+   "kind": "eoa",
+   "amount_wei": "525244775634565000000000000000000",
+   "inCohort": false,
+   "deliverTo": "0xb1da3900d385c22b15407080b9e05a13b92d09b0",
+   "augAmount_wei": null,
+   "status": "warn",
+   "note": "above the 1T LUV cohort ceiling: not in the drop by the cohort doctrine (decision needed)"
+  },
+  {
+   "polygon": "0xc15b4b925db1ac6c264634a2e4dc28f62296ee48",
+   "kind": "contract",
+   "amount_wei": "10450000000000000000000000000000",
+   "inCohort": false,
+   "deliverTo": null,
+   "augAmount_wei": null,
+   "status": "warn",
+   "note": "above the 1T LUV cohort ceiling: not in the drop by the cohort doctrine (decision needed)"
+  },
+  {
+   "polygon": "0xc1d3b936117349234aed85a86790ad8df199aa34",
+   "kind": "eoa",
+   "amount_wei": "2000000000000000000000000000000",
+   "inCohort": false,
+   "deliverTo": "0xc1d3b936117349234aed85a86790ad8df199aa34",
+   "augAmount_wei": null,
+   "status": "warn",
+   "note": "above the 1T LUV cohort ceiling: not in the drop by the cohort doctrine (decision needed)"
+  },
+  {
+   "polygon": "0x003813340d3dd8fc70551ebbdce6fb4fca15f301",
+   "kind": "smart-account",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x3795bc787e012c04ad75f9d84ff1ca57ab19da7e",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x027ef238f661e89582121264292b4335ad00cd40",
+   "kind": "eoa",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x027ef238f661e89582121264292b4335ad00cd40",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x03c308932c8ae212be66279b561772360032c093",
+   "kind": "eoa",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x03c308932c8ae212be66279b561772360032c093",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x0b2c4a24dcf7ae1b5e8bd20a2f894323322c822d",
+   "kind": "smart-account",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x73cb10576ff1533e8e2df7fec493fb0897e405de",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x135ab53215a9f15546a3fcec4569ad2042b16970",
+   "kind": "eoa",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x135ab53215a9f15546a3fcec4569ad2042b16970",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x162130eb92d07af0e4d2d32a0aa56e2d464f2791",
+   "kind": "smart-account",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x166a403f6b44a82cf97aaff3e12ad10fccaa1d98",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x186a62452ffd7992ca582b379bc5012cb017c45c",
+   "kind": "smart-account",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0xd564cd40e15cc64a92a84c37034918ba5c38ae5b",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x26ce4e4b429f8fc293c97b4e5f7c000e3ec2165b",
+   "kind": "eoa",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x26ce4e4b429f8fc293c97b4e5f7c000e3ec2165b",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x281fea94007ae19c55da38c00cfaefc4faaf7a34",
+   "kind": "eoa",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x281fea94007ae19c55da38c00cfaefc4faaf7a34",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x2df0f411ca2c43bd04cc0070d765565624edcb98",
+   "kind": "eoa",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x2df0f411ca2c43bd04cc0070d765565624edcb98",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x473a8ea11cc64585dba70d440886084c7b5e6903",
+   "kind": "smart-account",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0xd1df46f0bb4faed71e6c2a814e94bab35a0fead2",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x5049e168871d116d86dba06b523005eaf5821c75",
+   "kind": "eoa",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x5049e168871d116d86dba06b523005eaf5821c75",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x5ffb6db456b0ad35547a0316edcf0f1b4463e611",
+   "kind": "eoa",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x5ffb6db456b0ad35547a0316edcf0f1b4463e611",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x63213c8d2e75be6b6ceb8e036a966bc1cdf083e8",
+   "kind": "smart-account",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x814c0ad2b3d56ee7c771deb0c61d0561862861ab",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x668e91490d3ba4c9d58fa8a31ab4d3101e5b1103",
+   "kind": "smart-account",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0xc624b85812b9721048d33fff41c696f1e767c2f3",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x71c7656ec7ab88b098defb751b7401b5f6d8976f",
+   "kind": "eoa",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x71c7656ec7ab88b098defb751b7401b5f6d8976f",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x7222a1605af43ad6a4df37574cf8be9bc8450d4e",
+   "kind": "eoa",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x7222a1605af43ad6a4df37574cf8be9bc8450d4e",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x792f933dfb59f69aba0ceb643eedf79b6565c50c",
+   "kind": "eoa",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x792f933dfb59f69aba0ceb643eedf79b6565c50c",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x87f307a8c4ead06bb303596314454f0607f2431c",
+   "kind": "eoa",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x87f307a8c4ead06bb303596314454f0607f2431c",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x8956015cc678f97585c76fbdd2938e9b8842acfa",
+   "kind": "eoa",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x8956015cc678f97585c76fbdd2938e9b8842acfa",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x8a07bf7eea05a754813358843e6f7856d7f081d1",
+   "kind": "eoa",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x8a07bf7eea05a754813358843e6f7856d7f081d1",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x8ad742e567f5c0bf93c1aa2905f8a11b937eb0a1",
+   "kind": "smart-account",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x87a1aa08906ec8ae8bf3ddd187faaa6addfcba0b",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x944be51a3709c58ada26d416891ac4f77abc9e4b",
+   "kind": "smart-account",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x8a07bf7eea05a754813358843e6f7856d7f081d1",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x9a864aab3b5cc40529e9dac1d50459ca18208c54",
+   "kind": "eoa",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x9a864aab3b5cc40529e9dac1d50459ca18208c54",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x9f914499e1e0ec442e734e2f093a25950dd4a8c5",
+   "kind": "eoa",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x9f914499e1e0ec442e734e2f093a25950dd4a8c5",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0xa737143a3752b44efa60475188d2adaaa4cd9759",
+   "kind": "eoa",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0xa737143a3752b44efa60475188d2adaaa4cd9759",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0xaa2a97c7d650a3d4cc28f000e503ddc5be375d5a",
+   "kind": "smart-account",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x6156d4a17d094bee5d453795ee3004a6dfb6c084",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0xb580e27aa9bd9da0a9abf13d78d1c3a9af1863ef",
+   "kind": "eoa",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0xb580e27aa9bd9da0a9abf13d78d1c3a9af1863ef",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0xb6691f6953f62cf008169e80d84b8d34cf3e4c7b",
+   "kind": "smart-account",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0xd319cd000df3a87be14bee43897169625a952ee9",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0xbdf173a2ca391f4d6d2c5eb662158365c4889a73",
+   "kind": "smart-account",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0xb45fe7ee7346fbd55bb55f35153bb7e3ec431bdd",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0xc4cce5afe8cd9cd2e2860c43ac2c9b77f4e20871",
+   "kind": "smart-account",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x9f914499e1e0ec442e734e2f093a25950dd4a8c5",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0xc82108a669e185ec5b48e64af4852b485da5a05f",
+   "kind": "eoa",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0xc82108a669e185ec5b48e64af4852b485da5a05f",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0xcc4aa16be9cf5dfa3041dd6e6289b073d820a461",
+   "kind": "smart-account",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x72c8bec19ae6fe3f1c23344332447f5a7f68486e",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0xd3357904d822bdafaaea2ed8e8969de0bd407b84",
+   "kind": "eoa",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0xd3357904d822bdafaaea2ed8e8969de0bd407b84",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0xd564cd40e15cc64a92a84c37034918ba5c38ae5b",
+   "kind": "eoa",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0xd564cd40e15cc64a92a84c37034918ba5c38ae5b",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0xff0496549165d10b00095995a8254caea64c731a",
+   "kind": "smart-account",
+   "amount_wei": "1000000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x1b435cfc25e8da4201ed1b53064bad937ad85c5a",
+   "augAmount_wei": "1000000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x9797fbb4508e944e2a527ab45aacc55d426880c0",
+   "kind": "smart-account",
+   "amount_wei": "999000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x8242c67a8452de042b8e10f43d32ff7aeac1d9e5",
+   "augAmount_wei": "999000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0xb45fe7ee7346fbd55bb55f35153bb7e3ec431bdd",
+   "kind": "eoa",
+   "amount_wei": "950950000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0xb45fe7ee7346fbd55bb55f35153bb7e3ec431bdd",
+   "augAmount_wei": "950950000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x2f3d1a8b77725762a27d54cf18f4df21708fd057",
+   "kind": "eoa",
+   "amount_wei": "950000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x2f3d1a8b77725762a27d54cf18f4df21708fd057",
+   "augAmount_wei": "950000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0x9e9177a5989045edfbd3951acd885df2020a9673",
+   "kind": "eoa",
+   "amount_wei": "950000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0x9e9177a5989045edfbd3951acd885df2020a9673",
+   "augAmount_wei": "950000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  },
+  {
+   "polygon": "0xe08b8a813ecf8d911f7ebf378b135e641629ac07",
+   "kind": "eoa",
+   "amount_wei": "950000000000000000000000000000",
+   "inCohort": true,
+   "deliverTo": "0xe08b8a813ecf8d911f7ebf378b135e641629ac07",
+   "augAmount_wei": "950000000000000000000000000000",
+   "ethereum_wei": "0",
+   "status": "warn",
+   "note": "not delivered yet (holds 0 LUV on Ethereum)"
+  }
+ ]
+}
