@@ -77,6 +77,16 @@ Data that accumulates significant LUV proves its social value and becomes a cand
 -   **Action:** A consumer, dApp, or protocol mechanism pays a fee in a hard asset (e.g., USDC, ETH) to permanently settle or commercially utilize the high-LUV truth claim. This transaction triggers the economic waterfall.
 -   **Output:** An immutable on-chain record and a distribution of hard currency to the stakeholders who created and amplified the value.
 
+## **The SCIEN·TIFIC Standard of Accuracy**
+
+Every LUV amount is a whole number of 10⁻¹⁸ of a LUV, held as an integer and never as a float; a price
+is a liquidity pair's state read at a stated block; a small price is stated in a large unit rather than
+shortened. The standard, shown live on SCIEN·TIFIC's deployment across Ethereum, OP Mainnet, Base and
+Arbitrum One (chains identified through chainmarketcap) and on LUV's price and value read from its
+Uniswap pair, with the proposed distribution of LUV for CPU and GPU contribution through the
+IncentiveDistributor (payout token configurable, priced by chronos.oracle and kairos.agent):
+**[ACCURACY.md](ACCURACY.md)**.
+
 ## **The Dual-Token Economy: Abundance & Scarcity in Harmony**
 
 #### **SHAMBA LUV ($LUV) — The Currency of Gestures**

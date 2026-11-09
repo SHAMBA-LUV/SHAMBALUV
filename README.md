@@ -15,7 +15,7 @@
 | **Fees** | 5% on market trades, split **3 : 1 : 1** (3% reflections to holders · 1% liquidity · 1% team via 2-of-3 DAIO). **Wallet-to-wallet: no fee — 1 LUV === 1 LUV** |
 | **Trade** | [Uniswap — USDC → LUV](https://app.uniswap.org/swap?chain=ethereum&inputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&outputCurrency=0x2711111111683B8708cb9a48cBf36a51315F8254) (set slippage ≈ 10%: fee-on-transfer token) |
 
-**Papers & guides:** [EMOTONOMICS](docs/EMOTONOMICS.md) · [firstLUV — your first LUV, and the key that holds it](docs/firstLUV.md) · [LUVPAPER](docs/LUVPAPER.md) · [the liquidity lock](docs/LIQLOCK.md) · on-site: [emotonomics](https://luv.pythai.net/emotonomics.html) · [the engine](https://luv.pythai.net/engine.html) · [sentiment](https://luv.pythai.net/sentiment.html) · [wei](https://luv.pythai.net/wei.html)
+**Papers & guides:** [EMOTONOMICS](docs/EMOTONOMICS.md) · [ACCURACY — the SCIEN·TIFIC standard, live](docs/ACCURACY.md) · [firstLUV — your first LUV, and the key that holds it](docs/firstLUV.md) · [LUVPAPER](docs/LUVPAPER.md) · [the liquidity lock](docs/LIQLOCK.md) · on-site: [emotonomics](https://luv.pythai.net/emotonomics.html) · [the engine](https://luv.pythai.net/engine.html) · [sentiment](https://luv.pythai.net/sentiment.html) · [wei](https://luv.pythai.net/wei.html)
 
 ```txt
 SHAMBA LUV is a digital gesture designed to spread abundance, fun, joy and LUV as community vibe for social sharing building an emotional economy where gestures are stored on-chain giving attention, gestures, and community impact value from the power of LUV
