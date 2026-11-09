@@ -59,7 +59,7 @@ The same code at the same address on every chain, and the same supply, to the la
          = 115792089237316195423570985008687907853269984665640564039457.584007913129639935 SCIEN·TIFIC
 ```
 
-All 78 digits are held exactly. The deployment record: [scientific.pythai.net](https://scientific.pythai.net).
+All 78 digits are held exactly. The deployment record: [scientific.pythai.net](https://scientific.pythai.net) · scientific on GitHub: [every repository](https://github.com/search?q=scientific&type=repositories).
 
 ## 3. SHAMBA LUV: price and value from Uniswap (live)
 
